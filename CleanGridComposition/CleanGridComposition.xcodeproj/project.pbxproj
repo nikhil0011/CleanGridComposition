@@ -17,6 +17,18 @@
 		2330215D27B055880046F7AB /* CleanGridCompositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330215C27B055880046F7AB /* CleanGridCompositionTests.swift */; };
 		2330216727B055880046F7AB /* CleanGridCompositionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330216627B055880046F7AB /* CleanGridCompositionUITests.swift */; };
 		2330216927B055880046F7AB /* CleanGridCompositionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330216827B055880046F7AB /* CleanGridCompositionUITestsLaunchTests.swift */; };
+		23DFD33F27B0562A009307F0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33427B0562A009307F0 /* ImageCache.swift */; };
+		23DFD34027B0562A009307F0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33527B0562A009307F0 /* ImageLoader.swift */; };
+		23DFD34127B0562A009307F0 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33727B0562A009307F0 /* NetworkClient.swift */; };
+		23DFD34227B0562A009307F0 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33827B0562A009307F0 /* APIConfiguration.swift */; };
+		23DFD34327B0562A009307F0 /* ListingAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33927B0562A009307F0 /* ListingAPIRouter.swift */; };
+		23DFD34427B0562A009307F0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33A27B0562A009307F0 /* Logger.swift */; };
+		23DFD34527B0562A009307F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33B27B0562A009307F0 /* Network.swift */; };
+		23DFD34627B0562A009307F0 /* RequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33C27B0562A009307F0 /* RequestAdapter.swift */; };
+		23DFD34727B0562A009307F0 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33D27B0562A009307F0 /* NetworkLogger.swift */; };
+		23DFD34827B0562A009307F0 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD33E27B0562A009307F0 /* Urls.swift */; };
+		23DFD34B27B056B9009307F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 23DFD34A27B056B9009307F0 /* Alamofire */; };
+		23DFD34F27B0573C009307F0 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD34E27B0573C009307F0 /* GenericResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,17 @@
 		2330216227B055880046F7AB /* CleanGridCompositionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanGridCompositionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2330216627B055880046F7AB /* CleanGridCompositionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanGridCompositionUITests.swift; sourceTree = "<group>"; };
 		2330216827B055880046F7AB /* CleanGridCompositionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanGridCompositionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		23DFD33427B0562A009307F0 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		23DFD33527B0562A009307F0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		23DFD33727B0562A009307F0 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		23DFD33827B0562A009307F0 /* APIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		23DFD33927B0562A009307F0 /* ListingAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingAPIRouter.swift; sourceTree = "<group>"; };
+		23DFD33A27B0562A009307F0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		23DFD33B27B0562A009307F0 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		23DFD33C27B0562A009307F0 /* RequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAdapter.swift; sourceTree = "<group>"; };
+		23DFD33D27B0562A009307F0 /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		23DFD33E27B0562A009307F0 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		23DFD34E27B0573C009307F0 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DFD34B27B056B9009307F0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +125,8 @@
 		2330214127B055850046F7AB /* CleanGridComposition */ = {
 			isa = PBXGroup;
 			children = (
+				23DFD34C27B056ED009307F0 /* Common */,
+				2330217527B055AF0046F7AB /* Service */,
 				2330214227B055850046F7AB /* AppDelegate.swift */,
 				2330214427B055850046F7AB /* SceneDelegate.swift */,
 				2330214627B055850046F7AB /* ViewController.swift */,
@@ -130,6 +156,55 @@
 			path = CleanGridCompositionUITests;
 			sourceTree = "<group>";
 		};
+		2330217527B055AF0046F7AB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				23DFD33327B0562A009307F0 /* ImageCache */,
+				23DFD33627B0562A009307F0 /* RestClient */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		23DFD33327B0562A009307F0 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				23DFD33427B0562A009307F0 /* ImageCache.swift */,
+				23DFD33527B0562A009307F0 /* ImageLoader.swift */,
+			);
+			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		23DFD33627B0562A009307F0 /* RestClient */ = {
+			isa = PBXGroup;
+			children = (
+				23DFD33727B0562A009307F0 /* NetworkClient.swift */,
+				23DFD33827B0562A009307F0 /* APIConfiguration.swift */,
+				23DFD33927B0562A009307F0 /* ListingAPIRouter.swift */,
+				23DFD33A27B0562A009307F0 /* Logger.swift */,
+				23DFD33B27B0562A009307F0 /* Network.swift */,
+				23DFD33C27B0562A009307F0 /* RequestAdapter.swift */,
+				23DFD33D27B0562A009307F0 /* NetworkLogger.swift */,
+				23DFD33E27B0562A009307F0 /* Urls.swift */,
+			);
+			path = RestClient;
+			sourceTree = "<group>";
+		};
+		23DFD34C27B056ED009307F0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				23DFD34D27B056F4009307F0 /* Helper */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		23DFD34D27B056F4009307F0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				23DFD34E27B0573C009307F0 /* GenericResponse.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +221,9 @@
 			dependencies = (
 			);
 			name = CleanGridComposition;
+			packageProductDependencies = (
+				23DFD34A27B056B9009307F0 /* Alamofire */,
+			);
 			productName = CleanGridComposition;
 			productReference = 2330213F27B055850046F7AB /* CleanGridComposition.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +296,9 @@
 				Base,
 			);
 			mainGroup = 2330213627B055850046F7AB;
+			packageReferences = (
+				23DFD34927B056B9009307F0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2330214027B055850046F7AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,8 +342,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DFD34F27B0573C009307F0 /* GenericResponse.swift in Sources */,
+				23DFD34327B0562A009307F0 /* ListingAPIRouter.swift in Sources */,
+				23DFD33F27B0562A009307F0 /* ImageCache.swift in Sources */,
 				2330214727B055850046F7AB /* ViewController.swift in Sources */,
+				23DFD34027B0562A009307F0 /* ImageLoader.swift in Sources */,
+				23DFD34227B0562A009307F0 /* APIConfiguration.swift in Sources */,
+				23DFD34827B0562A009307F0 /* Urls.swift in Sources */,
+				23DFD34727B0562A009307F0 /* NetworkLogger.swift in Sources */,
+				23DFD34527B0562A009307F0 /* Network.swift in Sources */,
+				23DFD34427B0562A009307F0 /* Logger.swift in Sources */,
 				2330214327B055850046F7AB /* AppDelegate.swift in Sources */,
+				23DFD34127B0562A009307F0 /* NetworkClient.swift in Sources */,
+				23DFD34627B0562A009307F0 /* RequestAdapter.swift in Sources */,
 				2330214D27B055850046F7AB /* CleanGridComposition.xcdatamodeld in Sources */,
 				2330214527B055850046F7AB /* SceneDelegate.swift in Sources */,
 			);
@@ -608,6 +700,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23DFD34927B056B9009307F0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23DFD34A27B056B9009307F0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23DFD34927B056B9009307F0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2330214B27B055850046F7AB /* CleanGridComposition.xcdatamodeld */ = {
