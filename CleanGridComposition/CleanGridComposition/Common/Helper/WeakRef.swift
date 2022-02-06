@@ -14,13 +14,13 @@ public final class WeakRef<T: AnyObject> {
         self.object = object
     }
 }
-//extension WeakRef: RecipeListingPresenterOutput where T: RecipeListingPresenterOutput {
-//    func showError(error: GenericResponse) {
-//        object?.showError(error: error)
-//    }
-//    
-//    func showRecipes(viewModel: RecipeListingViewModel) {
-//        object?.showRecipes(viewModel: viewModel)
-//    }
-//}
-//
+extension WeakRef: ListingPresenterOutput where T: ListingPresenterOutput {
+    func showError(error: GenericResponse) {
+        object?.showError(error: error)
+    }
+    
+    func showRecipes(viewModel: ListingViewModel) {
+        object?.showRecipes(viewModel: viewModel)
+    }
+}
+
