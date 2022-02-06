@@ -36,6 +36,9 @@ class ListingViewController: UIViewController {
         }
         dataSource = ListingDataSource(collectionView: listingView.collectionView, array: itemViewModelList)
         dataSource?.collectionItemSelectionHandler = { [weak self] (indexPath) in
+            if let tappedItemVM = self?.dataSource?.provider.item(at: indexPath) {
+                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
+            }
         }
         self.listingView.collectionView.reloadData()
     }

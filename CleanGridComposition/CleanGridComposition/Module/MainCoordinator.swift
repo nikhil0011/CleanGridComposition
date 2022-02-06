@@ -31,4 +31,12 @@ class MainCoordinator: Coordinator {
         usecase.fetch()
         navigationController.pushViewController(vc, animated: true)
     }
+    func showDetailPage(viewModel: ListingItemViewModel) {
+        let vc = DetailViewController()
+        vc.coordinator = self
+        let presenter = DetailPresenter(output: WeakRef(vc))
+        presenter.didFetch(viewModel: viewModel)
+        navigationController.pushViewController(vc, animated: true)
+    }
+   
 }

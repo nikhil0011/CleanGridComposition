@@ -23,4 +23,13 @@ extension WeakRef: ListingPresenterOutput where T: ListingPresenterOutput {
         object?.showCatalogue(viewModel: viewModel)
     }
 }
+extension WeakRef: DetailPresenterOutput where T: DetailPresenterOutput {
+    func showItem(viewModel: ListingItemViewModel) {
+        object?.showItem(viewModel: viewModel)
+
+    }
+    func showError(error: GenericResponse) {
+        object?.showError(error: error)
+    }
+}
 

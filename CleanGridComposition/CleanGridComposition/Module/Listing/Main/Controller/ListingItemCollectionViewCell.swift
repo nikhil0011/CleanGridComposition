@@ -51,12 +51,6 @@ class ListingItemCollectionViewCell: BaseCollectionViewCell, ConfigurableCell {
                 }
             }
         }
-//        networker.image(url: recipeViewModel.imageUrl) { [weak self] data, error  in
-//            let img = data.image()
-//            DispatchQueue.main.async {
-//                self?.cellView.itemImageView.image = img
-//            }
-//        }
     }
 
 }
