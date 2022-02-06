@@ -16,9 +16,9 @@ struct ListingItemViewModel {
     let section: ListingViewController.SectionType
     init(item: Item, section: ListingViewController.SectionType) {
         self.id = item.id
-        self.title = item.brand
-        self.subTitle = item.name
-        self.price = "AED\(item.price)"
+        self.title = item.brand.uppercased()
+        self.subTitle = item.name.capitalized
+        self.price = "AED \(item.price)"
         self.imageUrl = URL(string: item.image)
         self.badges = item.badges
         self.section = section
