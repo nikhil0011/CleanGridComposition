@@ -19,8 +19,8 @@ extension WeakRef: ListingPresenterOutput where T: ListingPresenterOutput {
         object?.showError(error: error)
     }
     
-    func showRecipes(viewModel: ListingViewModel) {
-        object?.showRecipes(viewModel: viewModel)
+    func showCatalogue(viewModel: ListingViewModel) {
+        object?.showCatalogue(viewModel: viewModel)
     }
 }
 

@@ -25,7 +25,7 @@ class ListingPresenterTests: XCTestCase {
         
         typealias Form = (ListingViewModel)
         var sections: [Form] = [Form]()
-        func showRecipes(viewModel: ListingViewModel) {
+        func showCatalogue(viewModel: ListingViewModel) {
             sections.append(viewModel)
         }
     }

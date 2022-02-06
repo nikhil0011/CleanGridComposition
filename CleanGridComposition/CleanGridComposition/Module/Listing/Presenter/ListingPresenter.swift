@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ListingPresenterOutput {
-    func showRecipes(viewModel: ListingViewModel)
+    func showCatalogue(viewModel: ListingViewModel)
     func showError(error: GenericResponse)
 
 }
@@ -19,7 +19,7 @@ final class ListingPresenter: ListingUseCaseOutput {
     }
     
     func didFetch(data: CatalogueData) {
-        output.showRecipes(viewModel: ListingViewModel(data: data))
+        output.showCatalogue(viewModel: ListingViewModel(data: data))
     }
     func didSetError(error: GenericResponse) {
         output.showError(error: error)
