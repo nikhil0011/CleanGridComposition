@@ -38,5 +38,7 @@ class Network: NetworkClientProtocol {
             }
         }
     }
-   
+    static func catalogue(completion: @escaping HTTPResponse<CatalogueData>) {
+        performRequest(ListingAPIRouter.catalogue, completion: completion)
+    }
 }
