@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2303452527B16ECA00D9FFB3 /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452427B16ECA00D9FFB3 /* WishlistPresenter.swift */; };
+		2303452727B16ED300D9FFB3 /* WishlistUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452627B16ED300D9FFB3 /* WishlistUsecase.swift */; };
+		2303452927B16EDD00D9FFB3 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452827B16EDD00D9FFB3 /* WishlistViewModel.swift */; };
+		2303452B27B16EE600D9FFB3 /* WishlistItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452A27B16EE600D9FFB3 /* WishlistItemViewModel.swift */; };
+		2303452D27B16EF500D9FFB3 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452C27B16EF500D9FFB3 /* WishlistView.swift */; };
+		2303452F27B16F0400D9FFB3 /* WishlistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452E27B16F0400D9FFB3 /* WishlistItemView.swift */; };
+		2303453127B16F1800D9FFB3 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303453027B16F1800D9FFB3 /* WishlistViewController.swift */; };
+		2303453327B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303453227B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift */; };
 		2330214327B055850046F7AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330214227B055850046F7AB /* AppDelegate.swift */; };
 		2330214527B055850046F7AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330214427B055850046F7AB /* SceneDelegate.swift */; };
 		2330214727B055850046F7AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330214627B055850046F7AB /* ViewController.swift */; };
@@ -93,6 +101,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2303452427B16ECA00D9FFB3 /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
+		2303452627B16ED300D9FFB3 /* WishlistUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistUsecase.swift; sourceTree = "<group>"; };
+		2303452827B16EDD00D9FFB3 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		2303452A27B16EE600D9FFB3 /* WishlistItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistItemViewModel.swift; sourceTree = "<group>"; };
+		2303452C27B16EF500D9FFB3 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		2303452E27B16F0400D9FFB3 /* WishlistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistItemView.swift; sourceTree = "<group>"; };
+		2303453027B16F1800D9FFB3 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		2303453227B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2330213F27B055850046F7AB /* CleanGridComposition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanGridComposition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2330214227B055850046F7AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2330214427B055850046F7AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +206,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2303451C27B16E9000D9FFB3 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				2303451F27B16EA200D9FFB3 /* Main */,
+				2303451E27B16E9C00D9FFB3 /* UseCase */,
+				2303451D27B16E9600D9FFB3 /* Presenter */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		2303451D27B16E9600D9FFB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2303452627B16ED300D9FFB3 /* WishlistUsecase.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2303451E27B16E9C00D9FFB3 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				2303452427B16ECA00D9FFB3 /* WishlistPresenter.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		2303451F27B16EA200D9FFB3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2303452327B16EB600D9FFB3 /* Model */,
+				2303452227B16EB100D9FFB3 /* ViewModel */,
+				2303452127B16EAD00D9FFB3 /* View */,
+				2303452027B16EA600D9FFB3 /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2303452027B16EA600D9FFB3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2303453027B16F1800D9FFB3 /* WishlistViewController.swift */,
+				2303453227B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2303452127B16EAD00D9FFB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2303452C27B16EF500D9FFB3 /* WishlistView.swift */,
+				2303452E27B16F0400D9FFB3 /* WishlistItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2303452227B16EB100D9FFB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2303452827B16EDD00D9FFB3 /* WishlistViewModel.swift */,
+				2303452A27B16EE600D9FFB3 /* WishlistItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2303452327B16EB600D9FFB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2330213627B055850046F7AB = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +457,7 @@
 		23DFD38B27B05BB2009307F0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				2303451C27B16E9000D9FFB3 /* Wishlist */,
 				23DFD3AA27B06123009307F0 /* MainCoordinator.swift */,
 				23DFD3B727B06BDD009307F0 /* Detail */,
 				23DFD3B227B0676A009307F0 /* Styler */,
@@ -688,6 +776,7 @@
 				23DFD38227B0581F009307F0 /* Color.swift in Sources */,
 				23DFD37F27B0581F009307F0 /* Font.swift in Sources */,
 				23DFD37C27B0581F009307F0 /* GlobalColorToken.swift in Sources */,
+				2303452927B16EDD00D9FFB3 /* WishlistViewModel.swift in Sources */,
 				23DFD34327B0562A009307F0 /* ListingAPIRouter.swift in Sources */,
 				23DFD33F27B0562A009307F0 /* ImageCache.swift in Sources */,
 				23DFD37827B0581F009307F0 /* GenericResponse.swift in Sources */,
@@ -697,10 +786,14 @@
 				23DFD38627B0581F009307F0 /* CollectionDataProvider.swift in Sources */,
 				23DFD39C27B05D29009307F0 /* ListingPresenter.swift in Sources */,
 				23DFD34027B0562A009307F0 /* ImageLoader.swift in Sources */,
+				2303453127B16F1800D9FFB3 /* WishlistViewController.swift in Sources */,
+				2303452727B16ED300D9FFB3 /* WishlistUsecase.swift in Sources */,
 				23DFD37327B0581F009307F0 /* SharedAlert.swift in Sources */,
+				2303453327B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift in Sources */,
 				23DFD3AF27B061E9009307F0 /* ListingtemCellView.swift in Sources */,
 				23DFD3C427B071B3009307F0 /* DetailView.swift in Sources */,
 				23DFD34227B0562A009307F0 /* APIConfiguration.swift in Sources */,
+				2303452D27B16EF500D9FFB3 /* WishlistView.swift in Sources */,
 				23DFD39427B05C8C009307F0 /* CatalogueData.swift in Sources */,
 				23DFD37927B0581F009307F0 /* Typography.swift in Sources */,
 				23DFD37227B0581F009307F0 /* UIView+Extensions.swift in Sources */,
@@ -720,12 +813,15 @@
 				23DFD37627B0581F009307F0 /* WeakRef.swift in Sources */,
 				2330214327B055850046F7AB /* AppDelegate.swift in Sources */,
 				23DFD37A27B0581F009307F0 /* FontStyle.swift in Sources */,
+				2303452527B16ECA00D9FFB3 /* WishlistPresenter.swift in Sources */,
 				23DFD3B527B06784009307F0 /* ListingStyler.swift in Sources */,
 				23DFD38927B0581F009307F0 /* BaseCollectionViewCell.swift in Sources */,
 				23DFD34127B0562A009307F0 /* NetworkClient.swift in Sources */,
 				23DFD38127B0581F009307F0 /* LightAliasColorToken.swift in Sources */,
 				23DFD37E27B0581F009307F0 /* Theme.swift in Sources */,
 				23DFD38427B0581F009307F0 /* ArrayDataProvider.swift in Sources */,
+				2303452B27B16EE600D9FFB3 /* WishlistItemViewModel.swift in Sources */,
+				2303452F27B16F0400D9FFB3 /* WishlistItemView.swift in Sources */,
 				23DFD37527B0581F009307F0 /* ActivityIndicator.swift in Sources */,
 				23DFD34627B0562A009307F0 /* RequestAdapter.swift in Sources */,
 				23DFD39027B05C38009307F0 /* ListingUseCase.swift in Sources */,
