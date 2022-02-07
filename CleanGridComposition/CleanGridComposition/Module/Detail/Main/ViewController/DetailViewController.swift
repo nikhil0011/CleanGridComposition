@@ -14,7 +14,9 @@ class DetailViewController: UIViewController {
     var viewModel: ListingItemViewModel?
     lazy var detailView: DetailView = DetailView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.delegate = self
     }
+    let manager: CartItemManager = CartItemManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = viewModel?.title
@@ -49,5 +51,19 @@ extension DetailViewController: DetailPresenterOutput {
     }
     func showError(error: GenericResponse) {
         //
+    }
+}
+extension DetailViewController: DetailViewDelegate {
+    func addItemToBag() {
+        if let result = viewModel?.item {
+            manager.appendCart(item: result)
+        }
+        fetchall()
+    }
+    func fetchall() {
+        let results = manager.fetchCart()
+        results?.forEach {
+            Logger.log(type: .info, msg: $0.name ?? "")
+        }
     }
 }

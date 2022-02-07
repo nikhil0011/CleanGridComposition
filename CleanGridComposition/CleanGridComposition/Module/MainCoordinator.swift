@@ -38,5 +38,12 @@ class MainCoordinator: Coordinator {
         presenter.didFetch(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: true)
     }
-   
+    func showWishlist() {
+        let vc = WishlistViewController()
+        vc.coordinator = self
+        let presenter = WishlistPresenter(output: WeakRef(vc))
+        let usecase = WishlistUseCase(output: presenter)
+        usecase.fetch()
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

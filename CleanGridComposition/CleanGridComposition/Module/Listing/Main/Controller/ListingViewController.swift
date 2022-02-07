@@ -36,10 +36,11 @@ class ListingViewController: UIViewController {
         }
         dataSource = ListingDataSource(collectionView: listingView.collectionView, array: itemViewModelList)
         dataSource?.collectionItemSelectionHandler = { [weak self] (indexPath) in
-            self?.addItemToCart(index: indexPath)
-            //            if let tappedItemVM = self?.dataSource?.provider.item(at: indexPath) {
-            //                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
-            //            }
+            //            self?.addItemToCart(index: indexPath)
+            if let tappedItemVM = self?.dataSource?.provider.item(at: indexPath) {
+//                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
+                self?.coordinator?.showWishlist()
+            }
         }
         self.listingView.collectionView.reloadData()
     }

@@ -7,6 +7,8 @@
 
 import UIKit
 
-class WishlistItemCollectionViewCell: BaseCollectionViewCell {
-    
+class WishlistItemCollectionViewCell: BaseCollectionViewCell, ConfigurableCell {
+    func configure(_ item: WishlistItemViewModel, at indexPath: IndexPath) {
+        
+    }
 }

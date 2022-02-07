@@ -6,8 +6,11 @@
 //  
 
 import UIKit
-
+protocol DetailViewDelegate: AnyObject {
+    func addItemToBag()
+}
 class DetailView: BaseView {
+    weak var delegate: DetailViewDelegate?
     lazy var titleLabel: UILabel = UILabel.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = 2
@@ -43,7 +46,10 @@ class DetailView: BaseView {
         $0.backgroundColor = LColor.primary
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.isUserInteractionEnabled = true
-//        $0.addTarget(self, action: #selector(removeFromCart(sender:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(addToBag(sender:)), for: .touchUpInside)
+    }
+    @objc func addToBag(sender: AnyObject) {
+        delegate?.addItemToBag()
     }
     override func setupViews() {
         backgroundColor = LColor.surface

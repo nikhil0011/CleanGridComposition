@@ -32,4 +32,14 @@ extension WeakRef: DetailPresenterOutput where T: DetailPresenterOutput {
         object?.showError(error: error)
     }
 }
+extension WeakRef: WishlistPresenterOutput where T: WishlistPresenterOutput {
+    func showCatalogue(viewModel: WishlistViewModel) {
+        object?.showCatalogue(viewModel: viewModel)
+
+    }
+    func showError(error: GenericResponse) {
+        object?.showError(error: error)
+    }
+}
+
 
