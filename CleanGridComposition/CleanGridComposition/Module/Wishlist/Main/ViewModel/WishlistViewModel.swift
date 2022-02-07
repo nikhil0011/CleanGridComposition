@@ -6,3 +6,6 @@
 //
 
 import Foundation
+struct WishlistViewModel {
+    let items: [WISHLIST_ITEM]
+}

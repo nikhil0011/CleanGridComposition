@@ -29,7 +29,6 @@ class DetailViewController: UIViewController {
         styler.apply(textStyle: .detailTitle(model.title), to: detailView.titleLabel)
         styler.apply(textStyle: .detaillSubTitle(model.subTitle), to: detailView.subTitleLabel)
         styler.apply(textStyle: .detaillSubTitle(model.price), to: detailView.priceLabel)
-
         setupImage()
     }
     func setupImage() {

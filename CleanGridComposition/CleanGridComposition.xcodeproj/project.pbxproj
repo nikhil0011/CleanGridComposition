@@ -15,6 +15,14 @@
 		2303452F27B16F0400D9FFB3 /* WishlistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303452E27B16F0400D9FFB3 /* WishlistItemView.swift */; };
 		2303453127B16F1800D9FFB3 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303453027B16F1800D9FFB3 /* WishlistViewController.swift */; };
 		2303453327B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303453227B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift */; };
+		2303453527B17CC000D9FFB3 /* PersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303453427B17CC000D9FFB3 /* PersistantStorage.swift */; };
+		2303454327B18E7A00D9FFB3 /* CDCartItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303453F27B18E7A00D9FFB3 /* CDCartItem+CoreDataClass.swift */; };
+		2303454427B18E7A00D9FFB3 /* CDCartItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303454027B18E7A00D9FFB3 /* CDCartItem+CoreDataProperties.swift */; };
+		2303454927B18EEB00D9FFB3 /* WishlistDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303454827B18EEB00D9FFB3 /* WishlistDataRepository.swift */; };
+		2303454B27B18EF700D9FFB3 /* CartDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303454A27B18EF700D9FFB3 /* CartDataRepository.swift */; };
+		2303454E27B1902800D9FFB3 /* CDWishlist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303454C27B1902800D9FFB3 /* CDWishlist+CoreDataClass.swift */; };
+		2303454F27B1902800D9FFB3 /* CDWishlist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303454D27B1902800D9FFB3 /* CDWishlist+CoreDataProperties.swift */; };
+		2303455227B1943500D9FFB3 /* WishlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303455127B1943500D9FFB3 /* WishlistManager.swift */; };
 		2330214327B055850046F7AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330214227B055850046F7AB /* AppDelegate.swift */; };
 		2330214527B055850046F7AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330214427B055850046F7AB /* SceneDelegate.swift */; };
 		2330214727B055850046F7AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330214627B055850046F7AB /* ViewController.swift */; };
@@ -109,6 +117,14 @@
 		2303452E27B16F0400D9FFB3 /* WishlistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistItemView.swift; sourceTree = "<group>"; };
 		2303453027B16F1800D9FFB3 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		2303453227B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2303453427B17CC000D9FFB3 /* PersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStorage.swift; sourceTree = "<group>"; };
+		2303453F27B18E7A00D9FFB3 /* CDCartItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCartItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2303454027B18E7A00D9FFB3 /* CDCartItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCartItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2303454827B18EEB00D9FFB3 /* WishlistDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDataRepository.swift; sourceTree = "<group>"; };
+		2303454A27B18EF700D9FFB3 /* CartDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataRepository.swift; sourceTree = "<group>"; };
+		2303454C27B1902800D9FFB3 /* CDWishlist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWishlist+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		2303454D27B1902800D9FFB3 /* CDWishlist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWishlist+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		2303455127B1943500D9FFB3 /* WishlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistManager.swift; sourceTree = "<group>"; };
 		2330213F27B055850046F7AB /* CleanGridComposition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanGridComposition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2330214227B055850046F7AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2330214427B055850046F7AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,7 +235,7 @@
 		2303451D27B16E9600D9FFB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				2303452627B16ED300D9FFB3 /* WishlistUsecase.swift */,
+				2303452427B16ECA00D9FFB3 /* WishlistPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -227,7 +243,7 @@
 		2303451E27B16E9C00D9FFB3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				2303452427B16ECA00D9FFB3 /* WishlistPresenter.swift */,
+				2303452627B16ED300D9FFB3 /* WishlistUsecase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -235,6 +251,7 @@
 		2303451F27B16EA200D9FFB3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2323CC1827B1A37E00CA9758 /* DataSource */,
 				2303452327B16EB600D9FFB3 /* Model */,
 				2303452227B16EB100D9FFB3 /* ViewModel */,
 				2303452127B16EAD00D9FFB3 /* View */,
@@ -277,6 +294,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2303453E27B1823800D9FFB3 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				2303455027B1942400D9FFB3 /* Managers */,
+				2303454727B18ED500D9FFB3 /* Repository */,
+				2303454C27B1902800D9FFB3 /* CDWishlist+CoreDataClass.swift */,
+				2303454D27B1902800D9FFB3 /* CDWishlist+CoreDataProperties.swift */,
+				2303453F27B18E7A00D9FFB3 /* CDCartItem+CoreDataClass.swift */,
+				2303454027B18E7A00D9FFB3 /* CDCartItem+CoreDataProperties.swift */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
+		2303454727B18ED500D9FFB3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2303454827B18EEB00D9FFB3 /* WishlistDataRepository.swift */,
+				2303454A27B18EF700D9FFB3 /* CartDataRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2303455027B1942400D9FFB3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2303455127B1943500D9FFB3 /* WishlistManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2323CC1827B1A37E00CA9758 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		2330213627B055850046F7AB = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +354,7 @@
 		2330214127B055850046F7AB /* CleanGridComposition */ = {
 			isa = PBXGroup;
 			children = (
+				2303453E27B1823800D9FFB3 /* CoreDataModel */,
 				23DFD38B27B05BB2009307F0 /* Module */,
 				23DFD34C27B056ED009307F0 /* Common */,
 				2330217527B055AF0046F7AB /* Service */,
@@ -310,6 +365,7 @@
 				2330215027B055880046F7AB /* LaunchScreen.storyboard */,
 				2330215327B055880046F7AB /* Info.plist */,
 				2330214B27B055850046F7AB /* CleanGridComposition.xcdatamodeld */,
+				2303453427B17CC000D9FFB3 /* PersistantStorage.swift */,
 			);
 			path = CleanGridComposition;
 			sourceTree = "<group>";
@@ -457,10 +513,10 @@
 		23DFD38B27B05BB2009307F0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				2303451C27B16E9000D9FFB3 /* Wishlist */,
 				23DFD3AA27B06123009307F0 /* MainCoordinator.swift */,
-				23DFD3B727B06BDD009307F0 /* Detail */,
 				23DFD3B227B0676A009307F0 /* Styler */,
+				2303451C27B16E9000D9FFB3 /* Wishlist */,
+				23DFD3B727B06BDD009307F0 /* Detail */,
 				23DFD39827B05CD5009307F0 /* Listing */,
 			);
 			path = Module;
@@ -769,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2303454927B18EEB00D9FFB3 /* WishlistDataRepository.swift in Sources */,
 				23DFD37427B0581F009307F0 /* ReusableViewProtocol.swift in Sources */,
 				23DFD3B127B06458009307F0 /* ListingItemViewModel.swift in Sources */,
 				23DFD37727B0581F009307F0 /* Creatable.swift in Sources */,
@@ -787,6 +844,7 @@
 				23DFD39C27B05D29009307F0 /* ListingPresenter.swift in Sources */,
 				23DFD34027B0562A009307F0 /* ImageLoader.swift in Sources */,
 				2303453127B16F1800D9FFB3 /* WishlistViewController.swift in Sources */,
+				2303454E27B1902800D9FFB3 /* CDWishlist+CoreDataClass.swift in Sources */,
 				2303452727B16ED300D9FFB3 /* WishlistUsecase.swift in Sources */,
 				23DFD37327B0581F009307F0 /* SharedAlert.swift in Sources */,
 				2303453327B16F2700D9FFB3 /* WishlistItemCollectionViewCell.swift in Sources */,
@@ -804,8 +862,10 @@
 				23DFD34727B0562A009307F0 /* NetworkLogger.swift in Sources */,
 				23DFD39F27B05D4F009307F0 /* ListingViewModel.swift in Sources */,
 				23DFD38727B0581F009307F0 /* ConfigurableCell.swift in Sources */,
+				2303455227B1943500D9FFB3 /* WishlistManager.swift in Sources */,
 				23DFD38A27B0581F009307F0 /* BaseView.swift in Sources */,
 				23DFD34527B0562A009307F0 /* Network.swift in Sources */,
+				2303454F27B1902800D9FFB3 /* CDWishlist+CoreDataProperties.swift in Sources */,
 				23DFD3AB27B06123009307F0 /* MainCoordinator.swift in Sources */,
 				23DFD3BE27B06F09009307F0 /* DetailPresenter.swift in Sources */,
 				23DFD34427B0562A009307F0 /* Logger.swift in Sources */,
@@ -817,6 +877,7 @@
 				23DFD3B527B06784009307F0 /* ListingStyler.swift in Sources */,
 				23DFD38927B0581F009307F0 /* BaseCollectionViewCell.swift in Sources */,
 				23DFD34127B0562A009307F0 /* NetworkClient.swift in Sources */,
+				2303454427B18E7A00D9FFB3 /* CDCartItem+CoreDataProperties.swift in Sources */,
 				23DFD38127B0581F009307F0 /* LightAliasColorToken.swift in Sources */,
 				23DFD37E27B0581F009307F0 /* Theme.swift in Sources */,
 				23DFD38427B0581F009307F0 /* ArrayDataProvider.swift in Sources */,
@@ -824,11 +885,14 @@
 				2303452F27B16F0400D9FFB3 /* WishlistItemView.swift in Sources */,
 				23DFD37527B0581F009307F0 /* ActivityIndicator.swift in Sources */,
 				23DFD34627B0562A009307F0 /* RequestAdapter.swift in Sources */,
+				2303454B27B18EF700D9FFB3 /* CartDataRepository.swift in Sources */,
 				23DFD39027B05C38009307F0 /* ListingUseCase.swift in Sources */,
 				23DFD3A627B060C3009307F0 /* ListingView.swift in Sources */,
 				2330214D27B055850046F7AB /* CleanGridComposition.xcdatamodeld in Sources */,
+				2303453527B17CC000D9FFB3 /* PersistantStorage.swift in Sources */,
 				2330214527B055850046F7AB /* SceneDelegate.swift in Sources */,
 				23DFD38027B0581F009307F0 /* AliasFontToken.swift in Sources */,
+				2303454327B18E7A00D9FFB3 /* CDCartItem+CoreDataClass.swift in Sources */,
 				23DFD38527B0581F009307F0 /* CollectionArrayDataSource.swift in Sources */,
 				23DFD37B27B0581F009307F0 /* Opacity.swift in Sources */,
 				23DFD38327B0581F009307F0 /* CollectionDataSource.swift in Sources */,

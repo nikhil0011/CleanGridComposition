@@ -14,7 +14,7 @@ class ListingViewController: UIViewController {
     }
     weak var coordinator: MainCoordinator?
     var dataSource: ListingDataSource?
-
+    private let manager: WishlistManager = WishlistManager()
     lazy var listingView: ListingView = ListingView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = LColor.surface500
@@ -36,11 +36,24 @@ class ListingViewController: UIViewController {
         }
         dataSource = ListingDataSource(collectionView: listingView.collectionView, array: itemViewModelList)
         dataSource?.collectionItemSelectionHandler = { [weak self] (indexPath) in
-            if let tappedItemVM = self?.dataSource?.provider.item(at: indexPath) {
-                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
-            }
+            self?.addItemToCart(index: indexPath)
+            //            if let tappedItemVM = self?.dataSource?.provider.item(at: indexPath) {
+            //                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
+            //            }
         }
         self.listingView.collectionView.reloadData()
+    }
+    func addItemToCart(index: IndexPath) {
+        if let viewModel = dataSource?.provider.item(at: index) {
+            manager.appendWishlist(item: viewModel.item)
+        }
+        fetchall()
+    }
+    func fetchall() {
+        let results = manager.fetchWishlist()
+        results?.forEach {
+            Logger.log(type: .info, msg: $0.name ?? "")
+        }
     }
 }
 extension ListingViewController: ListingPresenterOutput {

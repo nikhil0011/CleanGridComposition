@@ -5,16 +5,20 @@
 //  Created by Nikhil Nangia on 07/02/22.
 //
 
-import Foundation
+import UIKit
 
 class WishlistView: BaseView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let view = UICollectionView(frame: self.frame, collectionViewLayout: layout)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.showsHorizontalScrollIndicator = false
+        view.backgroundColor = LColor.surface
 
+        return view
+    }()
+    override func setupViews() {
+        stack(collectionView)
+    }
 }

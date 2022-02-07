@@ -13,8 +13,8 @@ struct CatalogueData: Codable {
 
 struct Item: Codable {
     let id, sku: String
-    let image: String
-    let brand, name: String
+    let image: String?
+    let brand, name: String?
     let price: Int
     let originalPrice: Int?
     let badges: [String]

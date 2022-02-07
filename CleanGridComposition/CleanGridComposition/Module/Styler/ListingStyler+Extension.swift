@@ -30,7 +30,10 @@ private extension ListingStyler.TextStyle {
             return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary)
         case .addToBagButton(let text):
             return ListingStyler.TextAttributes(text: text, font: .bodyMedium,  color: LColor.surface, backgroundColor: LColor.primary)
+        case .removeButton(let text):
+            return ListingStyler.TextAttributes(text: text, font: .bodyMedium,  color: LColor.primary, backgroundColor: LColor.surface)
 
+            
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 struct ListingItemViewModel {
+    let item: Item
     let id: String
     var title: String
     var subTitle: String
@@ -14,14 +15,18 @@ struct ListingItemViewModel {
     var badges: [String]?
     var imageUrl: URL?
     let section: ListingViewController.SectionType
+    var isItemInWishlist: Bool {
+        WishlistManager().fetchWishlistItem(byIdentifier: id) != nil
+    }
     init(item: Item, section: ListingViewController.SectionType) {
         self.id = item.id
-        self.title = item.brand.uppercased()
-        self.subTitle = item.name.capitalized
+        self.title = (item.brand ?? "").uppercased()
+        self.subTitle = (item.name ?? "").capitalized
         self.price = "AED \(item.price)"
-        self.imageUrl = URL(string: item.image)
+        self.imageUrl = URL(string: item.image ?? "")
         self.badges = item.badges
         self.section = section
+        self.item = item
     }
     var itemHeight: CGFloat {
         330

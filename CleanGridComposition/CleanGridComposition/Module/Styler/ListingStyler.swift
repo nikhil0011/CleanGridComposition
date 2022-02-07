@@ -15,6 +15,7 @@ class ListingStyler {
         case detaillSubTitle(_ text: String)
         case badgeTitle(_ text: String)
         case addToBagButton(_ text: String)
+        case removeButton(_ text: String)
 
     }
     
