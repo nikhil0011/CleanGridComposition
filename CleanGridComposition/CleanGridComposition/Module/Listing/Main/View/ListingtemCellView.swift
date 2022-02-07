@@ -19,13 +19,11 @@ class ListingItemCellView: BaseView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = 1
     }
-    lazy var itemImageView: UIImageView = UIImageView.create {
+    lazy var interactionView: ListingItemInteractionView = ListingItemInteractionView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.contentMode = .scaleToFill
-        $0.layer.isOpaque = false
-        $0.clipsToBounds = true
-        $0.layer.masksToBounds = false
+        $0.backgroundColor = LColor.surface
     }
+  
     var outerView: UIView = UIView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -34,7 +32,9 @@ class ListingItemCellView: BaseView {
     }
     override func setupViews() {
         let infoStack = stack(titleLabel, subTitleLabel, priceLabel, alignment: .top, distribution: .fillProportionally
-        ).withMargins(.init(top: 0, left: 8, bottom: 4, right: 8))
-        stack(itemImageView.withHeight(180), infoStack, spacing: 3)
+        ).withMargins(.init(top: 0, left: 2, bottom: 4, right: 2))
+//        let image = stack(itemImageView).withHeight(180)
+        let interactionStackView = stack(interactionView).withHeight(240)
+        stack(interactionStackView, infoStack, spacing: 3)
     }
 }

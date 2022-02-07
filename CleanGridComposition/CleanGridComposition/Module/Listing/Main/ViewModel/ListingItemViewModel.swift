@@ -24,16 +24,16 @@ struct ListingItemViewModel {
         self.section = section
     }
     var itemHeight: CGFloat {
-        280
+        330
     }
     var itemInset: UIEdgeInsets {
-        .init(top: 8, left: 8, bottom: 8, right: 8)
+        .init(top: 0, left: 4, bottom: 0, right: 4)
     }
     
     var interItemSpacing: CGFloat {
-        8
+        4
     }
     var sectionInset: UIEdgeInsets {
-        .init(top: 0, left: 20, bottom: 0, right: 20)
+        .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }

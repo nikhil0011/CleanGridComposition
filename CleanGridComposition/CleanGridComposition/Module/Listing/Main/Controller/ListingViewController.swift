@@ -17,7 +17,7 @@ class ListingViewController: UIViewController {
 
     lazy var listingView: ListingView = ListingView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = LColor.surface
+        $0.backgroundColor = LColor.surface500
     }
     func setupView() {
         self.view.stack(listingView)

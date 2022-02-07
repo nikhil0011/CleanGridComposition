@@ -10,6 +10,7 @@ public protocol Color {
     var primary : UIColor {get}
     var surface : UIColor {get}
     var accent: UIColor { get }
+    var surface500: UIColor { get }
 }
 extension UIColor {
     func alpha(with opacity: Opacity) -> UIColor {

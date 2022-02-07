@@ -15,6 +15,8 @@ let AppFont = Theme.shared.font
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        overrideApplicationThemeStyle()
+
         Theme.shared.setStyle(app: .recipe, font: nil)
         return true
     }
@@ -65,3 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate {
+    func overrideApplicationThemeStyle() {
+        if #available(iOS 13.0, *) {
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .light
+        } else {
+        }
+    }
+}

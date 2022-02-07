@@ -13,10 +13,11 @@ class ListingView: BaseView {
         let view = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.showsHorizontalScrollIndicator = false
+        view.backgroundColor = LColor.surface500
+
         return view
     }()
     override func setupViews() {
-        backgroundColor = LColor.surface
         stack(collectionView)
     }
 }

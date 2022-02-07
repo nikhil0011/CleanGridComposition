@@ -71,6 +71,8 @@
 		23DFD3BE27B06F09009307F0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3BD27B06F09009307F0 /* DetailPresenter.swift */; };
 		23DFD3C127B06F83009307F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3C027B06F83009307F0 /* DetailViewController.swift */; };
 		23DFD3C427B071B3009307F0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3C327B071B3009307F0 /* DetailView.swift */; };
+		23DFD3DB27B153C6009307F0 /* ListingItemInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3DA27B153C6009307F0 /* ListingItemInteractionView.swift */; };
+		23DFD3DD27B155BD009307F0 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3DC27B155BD009307F0 /* CardLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,8 @@
 		23DFD3BD27B06F09009307F0 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		23DFD3C027B06F83009307F0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		23DFD3C327B071B3009307F0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		23DFD3DA27B153C6009307F0 /* ListingItemInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingItemInteractionView.swift; sourceTree = "<group>"; };
+		23DFD3DC27B155BD009307F0 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +463,8 @@
 			children = (
 				23DFD3A527B060C3009307F0 /* ListingView.swift */,
 				23DFD3AE27B061E9009307F0 /* ListingtemCellView.swift */,
+				23DFD3DA27B153C6009307F0 /* ListingItemInteractionView.swift */,
+				23DFD3DC27B155BD009307F0 /* CardLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 				23DFD37827B0581F009307F0 /* GenericResponse.swift in Sources */,
 				2330214727B055850046F7AB /* ViewController.swift in Sources */,
 				23DFD3A427B060B3009307F0 /* ListingViewController.swift in Sources */,
+				23DFD3DB27B153C6009307F0 /* ListingItemInteractionView.swift in Sources */,
 				23DFD38627B0581F009307F0 /* CollectionDataProvider.swift in Sources */,
 				23DFD39C27B05D29009307F0 /* ListingPresenter.swift in Sources */,
 				23DFD34027B0562A009307F0 /* ImageLoader.swift in Sources */,
@@ -697,6 +704,7 @@
 				23DFD39427B05C8C009307F0 /* CatalogueData.swift in Sources */,
 				23DFD37927B0581F009307F0 /* Typography.swift in Sources */,
 				23DFD37227B0581F009307F0 /* UIView+Extensions.swift in Sources */,
+				23DFD3DD27B155BD009307F0 /* CardLayout.swift in Sources */,
 				23DFD34827B0562A009307F0 /* Urls.swift in Sources */,
 				23DFD3C127B06F83009307F0 /* DetailViewController.swift in Sources */,
 				23DFD3A927B06114009307F0 /* ListingDataSource.swift in Sources */,
@@ -831,7 +839,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -886,7 +894,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

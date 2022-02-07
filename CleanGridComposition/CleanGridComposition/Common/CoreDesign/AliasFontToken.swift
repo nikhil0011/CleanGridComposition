@@ -12,7 +12,7 @@ public enum AliasFontToken {
     case titleLarge
     case titleSmall
     case bodyMedium
-    
+    case bodyLarge
     func getAttribues() -> [NSAttributedString.Key : Any] {
         switch self {
         case .titleLarge:
@@ -26,6 +26,10 @@ public enum AliasFontToken {
         
         case .bodyMedium:
             var attributes: [NSAttributedString.Key : Any] = FontStyle.type140.getAttribues()
+            attributes[.kern] = LetterSpacing.spacing100.rawValue
+            return attributes
+        case .bodyLarge:
+            var attributes: [NSAttributedString.Key : Any] = FontStyle.type142.getAttribues()
             attributes[.kern] = LetterSpacing.spacing100.rawValue
             return attributes
         

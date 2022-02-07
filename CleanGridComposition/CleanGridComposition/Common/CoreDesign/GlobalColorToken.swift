@@ -17,6 +17,6 @@ public enum GlobalColorToken {
     static let pebble100 = "#7692AD"
     static let pebble900 = "#001325"
     static let salmon500 = "#FD7685"
-    
+    static let surface500 = "#fbfbf9"
 }
 

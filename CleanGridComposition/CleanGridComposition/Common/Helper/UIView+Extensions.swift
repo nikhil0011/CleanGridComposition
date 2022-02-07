@@ -31,6 +31,7 @@ extension UIView {
         heightAnchor.constraint(equalToConstant: height).isActive = true
         return self
     }
+ 
     
     @discardableResult
     func withBorder<T: UIView>(width: CGFloat, color: UIColor) -> T {
@@ -38,7 +39,30 @@ extension UIView {
         layer.borderColor = color.cgColor
         return self as! T
     }
-
+    func anchor(top: NSLayoutYAxisAnchor?=nil, left: NSLayoutXAxisAnchor?=nil, bottom: NSLayoutYAxisAnchor?=nil, right: NSLayoutXAxisAnchor?=nil, paddingTop: CGFloat=0, paddingLeft: CGFloat=0, paddingBottom: CGFloat=0, paddingRight: CGFloat=0, width: CGFloat=0, height: CGFloat=0) {
+        let topInset: CGFloat = 0
+        let bottomInset: CGFloat = 0
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        if let top = top {
+            self.topAnchor.constraint(equalTo: top, constant: paddingTop+topInset).isActive = true
+        }
+        if let left = left {
+            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+        }
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom-bottomInset).isActive = true
+        }
+        if height != 0 {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if width != 0 {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+    }
     func fillSuperview(padding: UIEdgeInsets = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         if let superviewTopAnchor = superview?.safeTopAnchor {
@@ -125,14 +149,14 @@ extension UIView {
   }
 }
 extension UICollectionViewCell {
-    func cardLayout(radius: CGFloat) {
+    func cardLayout(radius: CGFloat, border: UIColor = LColor.primary.alpha(with: .opacity08), width: CGFloat = 1.0) {
         //This creates the shadows and modifies the cards a little bit
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = radius
-        contentView.layer.borderWidth = 4.0
+        contentView.layer.borderWidth = width
         contentView.layer.borderColor = UIColor.clear.cgColor
         contentView.layer.masksToBounds = false
-        layer.shadowColor = LColor.primary.alpha(with: .opacity16).cgColor
+        layer.shadowColor = border.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 1.0)
         layer.shadowRadius = radius
         layer.shadowOpacity = 1.0

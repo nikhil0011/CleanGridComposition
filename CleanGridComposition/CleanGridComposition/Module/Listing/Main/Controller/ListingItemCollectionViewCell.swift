@@ -12,17 +12,20 @@ class ListingItemCollectionViewCell: BaseCollectionViewCell, ConfigurableCell {
     lazy var cellView: ListingItemCellView = ListingItemCellView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.clipsToBounds = true
+        $0.backgroundColor = LColor.surface500
     }
     let networker = ImageLoader.shared
     var respresntedIndentifier: String = ""
   
     override func prepareForReuse() {
-        self.cellView.itemImageView.image = nil
+        self.cellView.interactionView.imageView.itemImageView.image = nil
     }
 
     override func setupViews() {
+        backgroundColor = LColor.surface.alpha(with: .opacity24)
         stack(cellView)
-        withBorder(width: 1, color: LColor.primary.alpha(with: .opacity08))
+//        cardLayout(radius: 2)
+//        withBorder(width: 1, color: LColor.primary.alpha(with: .opacity08))
     }
     var listingItemViewModel: ListingItemViewModel! {
         didSet {
@@ -40,14 +43,16 @@ class ListingItemCollectionViewCell: BaseCollectionViewCell, ConfigurableCell {
         styler.apply(textStyle: .listingCellTitle(listingItemViewModel.title), to: cellView.titleLabel)
         styler.apply(textStyle: .listingCellSubTitle(listingItemViewModel.subTitle), to: cellView.subTitleLabel)
         styler.apply(textStyle: .listingCellSubTitle(listingItemViewModel.price), to: cellView.priceLabel)
+        cellView.interactionView.wishlistView.badge.setup(text: listingItemViewModel.badges?.first ?? "")
+
     }
     func setupImage() {
-        cellView.itemImageView.image = UIImage(named: UIImage.App.placeholderImage)
+        cellView.interactionView.imageView.itemImageView.image = UIImage(named: UIImage.App.placeholderImage)
         if let url = listingItemViewModel.imageUrl {
-            cellView.itemImageView.image(url: url) { [weak self] data, error  in
+            cellView.interactionView.imageView.itemImageView.image(url: url) { [weak self] data, error  in
                 let img = data.image()
                 DispatchQueue.main.async {
-                    self?.cellView.itemImageView.image = img
+                    self?.cellView.interactionView.imageView.itemImageView.image = img
                 }
             }
         }
