@@ -29,17 +29,10 @@ class ListingViewController: UIViewController {
         ActivityIndicator.shared.hideProgressView()
     }
     private func setupDataSource(viewModel: ListingViewModel) {
-        var itemViewModelList: [ListingItemViewModel] = [ListingItemViewModel]()
-        viewModel.data.items.forEach {
-            let itemViewModel = ListingItemViewModel(item: $0, section: .catalogue)
-            itemViewModelList.append(itemViewModel)
-        }
-        dataSource = ListingDataSource(collectionView: listingView.collectionView, array: itemViewModelList)
+        dataSource = ListingDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
         dataSource?.collectionItemSelectionHandler = { [weak self] (indexPath) in
-            //            self?.addItemToCart(index: indexPath)
             if let tappedItemVM = self?.dataSource?.provider.item(at: indexPath) {
-//                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
-                self?.coordinator?.showWishlist()
+                self?.coordinator?.showDetailPage(viewModel: tappedItemVM)
             }
         }
         self.listingView.collectionView.reloadData()
