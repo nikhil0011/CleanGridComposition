@@ -26,7 +26,7 @@ class ListingViewController: UIViewController {
         super.viewDidLoad()
         self.title = "New In"
         setupView()
-        ActivityIndicator.shared.hideProgressView()
+        ActivityIndicator.shared.showProgressView(self.view)
     }
     private func setupDataSource(viewModel: ListingViewModel) {
         dataSource = ListingDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
@@ -40,13 +40,6 @@ class ListingViewController: UIViewController {
     func addItemToCart(index: IndexPath) {
         if let viewModel = dataSource?.provider.item(at: index) {
             manager.appendWishlist(item: viewModel.item)
-        }
-        fetchall()
-    }
-    func fetchall() {
-        let results = manager.fetchWishlist()
-        results?.forEach {
-            Logger.log(type: .info, msg: $0.name ?? "")
         }
     }
 }

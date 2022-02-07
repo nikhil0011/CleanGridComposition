@@ -58,12 +58,5 @@ extension DetailViewController: DetailViewDelegate {
         if let result = viewModel?.item {
             manager.appendCart(item: result)
         }
-        fetchall()
-    }
-    func fetchall() {
-        let results = manager.fetchCart()
-        results?.forEach {
-            Logger.log(type: .info, msg: $0.name ?? "")
-        }
     }
 }
