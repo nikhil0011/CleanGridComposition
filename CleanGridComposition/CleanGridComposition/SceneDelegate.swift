@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let navController = UINavigationController()
+        let navController = BaseNavigationViewController()
         navController.view.backgroundColor = LColor.surface
         // MARK: send that into our coordinator so that it can display view controllers
         coordinator = MainCoordinator(navigationController: navController)

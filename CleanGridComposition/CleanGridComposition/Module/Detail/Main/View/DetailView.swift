@@ -48,8 +48,14 @@ class DetailView: BaseView {
         $0.isUserInteractionEnabled = true
         $0.addTarget(self, action: #selector(addToBag(sender:)), for: .touchUpInside)
     }
+    var isItemInCart: Bool = false {
+        didSet {
+            setup()
+        }
+    }
     @objc func addToBag(sender: AnyObject) {
         delegate?.addItemToBag()
+        isItemInCart = true
     }
     override func setupViews() {
         backgroundColor = LColor.surface
@@ -62,6 +68,8 @@ class DetailView: BaseView {
         setup()
     }
     func setup() {
-        ListingStyler.myModule.apply(textStyle: .addToBagButton("Add To Bag".uppercased()), to: addToBag)
+        let text = isItemInCart ? "Item Added To Bag" : "Add To Bag"
+        addToBag.isUserInteractionEnabled = !isItemInCart
+        ListingStyler.myModule.apply(textStyle: .addToBagButton(text.uppercased()), to: addToBag)
     }
 }

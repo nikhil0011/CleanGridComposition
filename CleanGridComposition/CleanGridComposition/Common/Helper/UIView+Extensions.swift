@@ -42,10 +42,6 @@ extension UIView {
         return self as! T
     }
     
- 
-    
-
-    
     @discardableResult
     func withBorder<T: UIView>(width: CGFloat, color: UIColor) -> T {
         layer.borderWidth = width
@@ -176,5 +172,10 @@ extension UICollectionViewCell {
         layer.masksToBounds = false
         layer.cornerRadius = radius
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: radius).cgPath
+    }
+}
+extension UIView {
+    func addCorner(radius: CGFloat) {
+        layer.cornerRadius = radius
     }
 }

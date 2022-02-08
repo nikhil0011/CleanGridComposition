@@ -12,8 +12,8 @@ import UIKit
 protocol Coordinator {
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
-
     func start()
+    func dismiss()
 }
 class MainCoordinator: Coordinator {
     // MARK: We are not using it here it is always Empty
@@ -44,6 +44,25 @@ class MainCoordinator: Coordinator {
         let presenter = WishlistPresenter(output: WeakRef(vc))
         let usecase = WishlistUseCase(output: presenter)
         usecase.fetch()
-        navigationController.pushViewController(vc, animated: true)
+        let nvc = BaseNavigationViewController(rootViewController: vc)
+        nvc.modalPresentationStyle = .fullScreen
+        navigationController.present(nvc, animated: true)
+    }
+    func dismiss() {
+        if let isPresented = navigationController.visibleViewController?.isModal, isPresented {
+            navigationController.dismiss(animated: true)
+        } else {
+            navigationController.popViewController(animated: true)
+        }
+    }
+}
+
+extension UIViewController {
+    var isModal: Bool {
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
 }

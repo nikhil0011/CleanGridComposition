@@ -19,7 +19,6 @@ class ListingStyler {
         case wishlistCellTitle(_ text: String)
         case wishlistCellSubTitle(_ text: String)
         case wishlistCellPrice(_ text: String)
-
     }
     
     struct TextAttributes {
@@ -66,14 +65,19 @@ class ListingStyler {
         let attributes = attributesForStyle(textStyle)
         let attributedText = NSMutableAttributedString(attributedString: attributes.text.typographicText(color: attributes.color, font: attributes.font, opacity: attributes.opacity))
         label.attributedText = attributedText
-        label.lineHeight = 16
+        
     }
     func apply(textStyle: TextStyle, to button: UIButton) {
         let attributes = attributesForStyle(textStyle)
-        let attributedText = NSMutableAttributedString(attributedString: attributes.text.typographicText(color: attributes.color, font: attributes.font, opacity: attributes.opacity))
+        var extraAttributes: [NSAttributedString.Key : Any] = [:]
+        switch textStyle {
+        case .removeButton( _):
+            extraAttributes = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        default:
+            break
+        }
+        let attributedText = NSMutableAttributedString(attributedString: attributes.text.typographicText(color: attributes.color, font: attributes.font, attributes: extraAttributes, opacity: attributes.opacity))
         button.setAttributedTitle(attributedText, for: .normal)
-        button.titleLabel?.lineHeight = 16
-        
     }
 }
 extension UIImage {
@@ -81,5 +85,8 @@ extension UIImage {
         static let wishlist = "wishlist"
         static let placeholderImage = "placeholder"
         static let delete = "delete"
+        static let back = "back"
+        static let dismiss = "dismiss"
+        static let wishlistMarked = "wishlist_marked"
     }
 }

@@ -24,39 +24,15 @@ class ListingItemCollectionViewCell: BaseCollectionViewCell, ConfigurableCell {
     override func setupViews() {
         backgroundColor = LColor.surface.alpha(with: .opacity24)
         stack(cellView)
-//        cardLayout(radius: 2)
-//        withBorder(width: 1, color: LColor.primary.alpha(with: .opacity08))
     }
-    var listingItemViewModel: ListingItemViewModel! {
-        didSet {
-            setupInfo()
-            setupImage()
-        }
-    }
+    
     func configure(_ item: ListingItemViewModel, at indexPath: IndexPath) {
         let id = item.id
         if self.respresntedIndentifier == id {
-            self.listingItemViewModel = item
+            self.cellView.setupInfo(viewModel: item)
         }
     }
-    func setupInfo() {
-        styler.apply(textStyle: .listingCellTitle(listingItemViewModel.title), to: cellView.titleLabel)
-        styler.apply(textStyle: .listingCellSubTitle(listingItemViewModel.subTitle), to: cellView.subTitleLabel)
-        styler.apply(textStyle: .listingCellSubTitle(listingItemViewModel.price), to: cellView.priceLabel)
-        cellView.interactionView.wishlistView.badge.setup(text: listingItemViewModel.badges?.first ?? "")
-
-    }
-    func setupImage() {
-        cellView.interactionView.imageView.itemImageView.image = UIImage(named: UIImage.App.placeholderImage)
-        if let url = listingItemViewModel.imageUrl {
-            cellView.interactionView.imageView.itemImageView.image(url: url) { [weak self] data, error  in
-                let img = data.image()
-                DispatchQueue.main.async {
-                    self?.cellView.interactionView.imageView.itemImageView.image = img
-                }
-            }
-        }
-    }
+    
 
 }
 

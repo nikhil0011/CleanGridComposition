@@ -59,11 +59,11 @@ open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollec
     {
         return UICollectionReusableView(frame: CGRect.zero)
     }
-    // MARK: - UICollectionViewDelegate
-//    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        collectionItemSelectionHandler?(indexPath)
-//    }
+//     MARK: - UICollectionViewDelegate
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        collectionItemSelectionHandler?(indexPath)
+    }
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     }
 

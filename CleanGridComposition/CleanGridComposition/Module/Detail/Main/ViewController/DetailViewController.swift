@@ -19,15 +19,37 @@ class DetailViewController: UIViewController {
     let manager: CartItemManager = CartItemManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = viewModel?.title
+        customiseBackItem(image: UIImage.App.back, action: #selector(popToPrevious))
+        enableInteractiveGesture()
+        if let viewModel = viewModel {
+            self.title = viewModel.title
+            setupRightBarItem(image: viewModel.wishlistIcon)
+        }
         self.view.addSubview(detailView)
         detailView.fillSuperview()
         setup(viewModel: viewModel)
+    }
+    @objc func popToPrevious() {
+        coordinator?.dismiss()
+    }
+    @objc func manageWishlist() {
+        guard let viewModel = viewModel else { return }
+        let manager = WishlistManager()
+        if viewModel.isItemInWishlist {
+            _ = manager.deleteWishlistItem(id: viewModel.id)
+        } else {
+            manager.appendWishlist(item: viewModel.item)
+        }
+        setupRightBarItem(image: viewModel.wishlistIcon)
+    }
+    func setupRightBarItem(image: String) {
+        addRightBarItem(image: image, action: #selector(manageWishlist))
     }
     func setup(viewModel: ListingItemViewModel?) {
         guard let model = viewModel else {
             return
         }
+        detailView.isItemInCart = model.isItemInCart
         styler.apply(textStyle: .detailTitle(model.title), to: detailView.titleLabel)
         styler.apply(textStyle: .detaillSubTitle(model.subTitle), to: detailView.subTitleLabel)
         styler.apply(textStyle: .detaillSubTitle(model.price), to: detailView.priceLabel)
@@ -50,13 +72,14 @@ extension DetailViewController: DetailPresenterOutput {
         self.viewModel = viewModel
     }
     func showError(error: GenericResponse) {
-        //
+        SharedAlert.sharedInstance.alert(view: self, title: "Loading Failed", message: "Please try again could not load required data")
     }
 }
 extension DetailViewController: DetailViewDelegate {
     func addItemToBag() {
         if let result = viewModel?.item {
             manager.appendCart(item: result)
+            SharedAlert.sharedInstance.alert(view: self, title: "Item Added", message: "Total Cart Count \(manager.fetchCart()?.count ?? 0)")
         }
     }
 }

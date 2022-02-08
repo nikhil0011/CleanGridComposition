@@ -19,6 +19,8 @@ class ListingDataSource: CollectionArrayDataSource<ListingItemViewModel, Listing
             let respresentedId = item.id
             cell.respresntedIndentifier = respresentedId
             cell.configure(item, at: indexPath)
+            cell.cellView.interactionView.wishlistView.headerViewDelegate = self
+            cell.cellView.interactionView.wishlistView.index = indexPath
             return cell
         }
     }
@@ -39,5 +41,17 @@ extension ListingDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         guard let item = provider.item(at: IndexPath(item: 0, section: section)) else { return .zero }
         return item.sectionInset
+    }
+}
+extension ListingDataSource: ItemHeaderViewDelegate {
+    func wishlistTapped(index: IndexPath?) {
+        let manager = WishlistManager()
+        if let indexPath = index, let viewModel = provider.item(at: indexPath) {
+            if viewModel.isItemInWishlist {
+                manager.deleteWishlistItem(id: viewModel.id)
+            } else {
+                manager.appendWishlist(item: viewModel.item)
+            }
+        }
     }
 }

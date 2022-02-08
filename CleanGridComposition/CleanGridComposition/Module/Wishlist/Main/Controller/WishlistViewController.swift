@@ -19,9 +19,14 @@ class WishlistViewController: UIViewController {
         self.view.stack(listingView)
     }
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        self.title = "Wishlist"
+        addRightBarItem(image: UIImage.App.dismiss, action: #selector(popToPrevious))
         setupView()
         ActivityIndicator.shared.hideProgressView()
+    }
+    @objc func popToPrevious() {
+        coordinator?.dismiss()
     }
     func setupDataSource(viewModel: WishlistViewModel) {
         dataSource = WishlistDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
@@ -37,8 +42,6 @@ extension WishlistViewController: WishlistPresenterOutput {
     
     func showError(error: GenericResponse) {
         ActivityIndicator.shared.hideProgressView()
-        if let description = error.localizedDescription {
-            SharedAlert.sharedInstance.alert(view: self, title: "Network Request Failed", message: description)
-        }
+        SharedAlert.sharedInstance.alert(view: self, title: "Loading Failed", message: "Please try again could not load required data")
     }
 }

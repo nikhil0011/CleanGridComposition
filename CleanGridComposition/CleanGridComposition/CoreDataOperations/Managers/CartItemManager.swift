@@ -10,7 +10,9 @@ struct CartItemManager {
     private let cartItemDataRepository: CartDataRepository = CartDataRepository()
 
     func appendCart(item: Item) {
-        cartItemDataRepository.createCart(item: item)
+        if fetchCartItem(byIdentifier: item.id) == nil {
+            cartItemDataRepository.createCart(item: item)
+        }
     }
 
     func fetchCart() -> [Item]? {
@@ -28,5 +30,11 @@ struct CartItemManager {
 
     func deleteCartItem(id: String) -> Bool {
         return cartItemDataRepository.delete(id: id)
+    }
+    func clearAll() {
+        let items = fetchCart()
+        items?.forEach {
+            _ = deleteCartItem(id: $0.id)
+        }
     }
 }

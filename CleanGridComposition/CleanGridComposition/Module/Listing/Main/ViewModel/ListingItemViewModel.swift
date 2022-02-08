@@ -18,6 +18,12 @@ struct ListingItemViewModel {
     var isItemInWishlist: Bool {
         WishlistManager().fetchWishlistItem(byIdentifier: id) != nil
     }
+    var isItemInCart: Bool {
+        CartItemManager().fetchCartItem(byIdentifier: id) != nil
+    }
+    var wishlistIcon: String {
+        isItemInWishlist ? UIImage.App.wishlistMarked : UIImage.App.wishlist
+    }
     init(item: Item, section: ListingViewController.SectionType) {
         self.id = item.id
         self.title = (item.brand ?? "").uppercased()
