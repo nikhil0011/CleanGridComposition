@@ -32,8 +32,14 @@ private extension ListingStyler.TextStyle {
             return ListingStyler.TextAttributes(text: text, font: .bodyMedium,  color: LColor.surface, backgroundColor: LColor.primary)
         case .removeButton(let text):
             return ListingStyler.TextAttributes(text: text, font: .bodyMedium,  color: LColor.primary, backgroundColor: LColor.surface)
+        case .wishlistCellTitle(let text):
+            return ListingStyler.TextAttributes(text: text, font: .bodyLarge, color: LColor.primary)
+        case .wishlistCellSubTitle(let text):
+            return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary, .opacity92)
+        case .wishlistCellPrice(let text):
+            return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary, .opacity64)
 
-            
+
         }
     }
 }

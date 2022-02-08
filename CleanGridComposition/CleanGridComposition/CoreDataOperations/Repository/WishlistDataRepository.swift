@@ -65,7 +65,7 @@ struct WishlistDataRepository : WishlistRepository {
             return false
         }
         PersistentStorage.shared.context.delete(cdWishlist!)
-        return false
+        return true
     }
     private func getItem(byIdentifier id: String) -> CDWishlist? {
         let fetchRequest = NSFetchRequest<CDWishlist>(entityName: "CDWishlist")

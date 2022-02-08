@@ -14,8 +14,7 @@ class WishlistView: BaseView {
         let view = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.showsHorizontalScrollIndicator = false
-        view.backgroundColor = LColor.surface
-
+        view.backgroundColor = LColor.primary.alpha(with: .opacity08)
         return view
     }()
     override func setupViews() {

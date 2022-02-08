@@ -16,6 +16,9 @@ class ListingStyler {
         case badgeTitle(_ text: String)
         case addToBagButton(_ text: String)
         case removeButton(_ text: String)
+        case wishlistCellTitle(_ text: String)
+        case wishlistCellSubTitle(_ text: String)
+        case wishlistCellPrice(_ text: String)
 
     }
     
@@ -77,5 +80,6 @@ extension UIImage {
     struct App {
         static let wishlist = "wishlist"
         static let placeholderImage = "placeholder"
+        static let delete = "delete"
     }
 }

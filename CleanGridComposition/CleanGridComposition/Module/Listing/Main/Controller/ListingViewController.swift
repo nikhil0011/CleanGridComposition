@@ -24,9 +24,23 @@ class ListingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New In"
+//        self.title = "New In"
+        self.title = "Listing"
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barStyle = .default
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.black,
+            .font: AppFont.mediumFont(20)
+        ]
+        navigationItem.rightBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(navigateToWishlist), imageName: UIImage.App.wishlist)
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+
         setupView()
         ActivityIndicator.shared.showProgressView(self.view)
+    }
+    @objc func navigateToWishlist() {
+        coordinator?.showWishlist()
     }
     private func setupDataSource(viewModel: ListingViewModel) {
         dataSource = ListingDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
@@ -57,3 +71,18 @@ extension ListingViewController: ListingPresenterOutput {
     }
 }
 
+extension UIBarButtonItem {
+
+    static func menuButton(_ target: Any?, action: Selector, imageName: String) -> UIBarButtonItem {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.addTarget(target, action: action, for: .touchUpInside)
+
+        let menuBarItem = UIBarButtonItem(customView: button)
+        menuBarItem.customView?.translatesAutoresizingMaskIntoConstraints = false
+        menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 24).isActive = true
+
+        return menuBarItem
+    }
+}

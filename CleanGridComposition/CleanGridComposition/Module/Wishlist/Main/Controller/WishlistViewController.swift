@@ -19,20 +19,12 @@ class WishlistViewController: UIViewController {
         self.view.stack(listingView)
     }
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Wishlist"
+        super.viewDidLoad()        
         setupView()
         ActivityIndicator.shared.hideProgressView()
     }
     func setupDataSource(viewModel: WishlistViewModel) {
-        var itemViewModelList: [WishlistItemViewModel] = [WishlistItemViewModel]()
-        viewModel.items.forEach {
-            let itemViewModel = WishlistItemViewModel(item: $0)
-            itemViewModelList.append(itemViewModel)
-        }
-        dataSource = WishlistDataSource(collectionView: listingView.collectionView, array: itemViewModelList)
-        dataSource?.collectionItemSelectionHandler = { [weak self] (indexPath) in
-        }
+        dataSource = WishlistDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
         self.listingView.collectionView.reloadData()
     }
 }
