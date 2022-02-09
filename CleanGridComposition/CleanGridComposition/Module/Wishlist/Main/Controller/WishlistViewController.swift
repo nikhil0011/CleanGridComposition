@@ -17,6 +17,7 @@ class WishlistViewController: UIViewController {
         $0.backgroundColor = LColor.surface
     }
     func setupView() {
+        self.view.backgroundColor = LColor.surface
         self.view.stack(listingView)
     }
     override func viewDidLoad() {
