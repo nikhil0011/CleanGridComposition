@@ -37,6 +37,7 @@
 		23C1C18227B42CC0000CD31B /* CartManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C18127B42CC0000CD31B /* CartManagerTests.swift */; };
 		23C1C18427B42CCB000CD31B /* WishlistManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C18327B42CCB000CD31B /* WishlistManagerTests.swift */; };
 		23C1C18627B4392A000CD31B /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C18527B4392A000CD31B /* CardLayout.swift */; };
+		23C1C18A27B4407F000CD31B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23C1C18927B4407F000CD31B /* README.md */; };
 		23D1C4B327B2C762003ADDFD /* CDWishlist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1C4B127B2C762003ADDFD /* CDWishlist+CoreDataClass.swift */; };
 		23D1C4B427B2C762003ADDFD /* CDWishlist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1C4B227B2C762003ADDFD /* CDWishlist+CoreDataProperties.swift */; };
 		23D1C4B627B2E5C4003ADDFD /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1C4B527B2E5C4003ADDFD /* BaseNavigationViewController.swift */; };
@@ -152,6 +153,7 @@
 		23C1C18127B42CC0000CD31B /* CartManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManagerTests.swift; sourceTree = "<group>"; };
 		23C1C18327B42CCB000CD31B /* WishlistManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistManagerTests.swift; sourceTree = "<group>"; };
 		23C1C18527B4392A000CD31B /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
+		23C1C18927B4407F000CD31B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = CleanGridComposition/README.md; sourceTree = "<group>"; };
 		23D1C4B127B2C762003ADDFD /* CDWishlist+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDWishlist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		23D1C4B227B2C762003ADDFD /* CDWishlist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDWishlist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		23D1C4B527B2E5C4003ADDFD /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		2330213627B055850046F7AB = {
 			isa = PBXGroup;
 			children = (
+				23C1C18927B4407F000CD31B /* README.md */,
 				2330214127B055850046F7AB /* CleanGridComposition */,
 				2330215B27B055880046F7AB /* CleanGridCompositionTests */,
 				2330216527B055880046F7AB /* CleanGridCompositionUITests */,
@@ -874,6 +877,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C1C18A27B4407F000CD31B /* README.md in Resources */,
 				2330215227B055880046F7AB /* LaunchScreen.storyboard in Resources */,
 				2330214F27B055880046F7AB /* Assets.xcassets in Resources */,
 			);
