@@ -16,16 +16,19 @@ class WishlistViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = LColor.surface
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavbar()
+        setupView()
+        ActivityIndicator.shared.hideProgressView()
+    }
     func setupView() {
         self.view.backgroundColor = LColor.surface
         self.view.stack(listingView)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setupNavbar() {
         self.title = "Wishlist"
         addRightBarItem(image: UIImage.App.dismiss, action: #selector(popToPrevious))
-        setupView()
-        ActivityIndicator.shared.hideProgressView()
     }
     @objc func popToPrevious() {
         coordinator?.dismiss()
