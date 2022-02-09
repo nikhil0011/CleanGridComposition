@@ -13,6 +13,7 @@ class ListingStyler {
         case listingCellSubTitle(_ text: String)
         case detailTitle(_ text: String)
         case detaillSubTitle(_ text: String)
+        case detailPrice(_ price: String, _ orignalPrice: String)
         case badgeTitle(_ text: String)
         case addToBagButton(_ text: String)
         case removeButton(_ text: String)
@@ -65,7 +66,20 @@ class ListingStyler {
         let attributes = attributesForStyle(textStyle)
         let attributedText = NSMutableAttributedString(attributedString: attributes.text.typographicText(color: attributes.color, font: attributes.font, opacity: attributes.opacity))
         label.attributedText = attributedText
-        
+        switch textStyle {
+        case .detailPrice(let price, let orignalPrice):
+            let attributedText = NSMutableAttributedString(attributedString: price.typographicText(color: attributes.color, font: attributes.font, opacity: attributes.opacity))
+            let extraAttributes: [NSAttributedString.Key : Any] = [.strikethroughStyle: NSUnderlineStyle.single.rawValue]
+            attributedText.append(NSAttributedString(string: " "))
+            let mrpText = NSMutableAttributedString(attributedString: orignalPrice.typographicText(color: attributes.color, font: attributes.font, attributes: extraAttributes, opacity: .opacity64))
+            attributedText.append(mrpText)
+            label.attributedText = attributedText
+            label.textAlignment  = .center
+        case .detailTitle, .detaillSubTitle :
+            label.textAlignment  = .center
+        default:
+            break
+        }
     }
     func apply(textStyle: TextStyle, to button: UIButton) {
         let attributes = attributesForStyle(textStyle)

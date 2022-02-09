@@ -21,10 +21,12 @@ private extension ListingStyler.TextStyle {
         case .listingCellTitle(let text):
             return ListingStyler.TextAttributes(text: text, font: .bodyLarge, color: LColor.primary)
         case .listingCellSubTitle(let text):
-            return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary, .opacity92)
+            return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary, .opacity64)
         case .detailTitle(let text):
             return ListingStyler.TextAttributes(text: text, font: .titleSmall, color: LColor.primary)
         case .detaillSubTitle(let text):
+            return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary, .opacity92)
+        case .detailPrice(let text, _):
             return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary, .opacity92)
         case .badgeTitle(let text):
             return ListingStyler.TextAttributes(text: text, font: .bodyMedium, color: LColor.primary)

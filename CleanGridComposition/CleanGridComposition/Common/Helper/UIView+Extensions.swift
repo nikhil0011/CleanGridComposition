@@ -87,7 +87,11 @@ extension UIView {
             trailingAnchor.constraint(equalTo: superviewTrailingAnchor, constant: -padding.right).isActive = true
         }
     }
-    
+    func addSub(views: UIView...) {
+        views.forEach {
+            addSubview($0)
+        }
+    }
 }
 
 extension UIStackView {
@@ -179,3 +183,4 @@ extension UIView {
         layer.cornerRadius = radius
     }
 }
+

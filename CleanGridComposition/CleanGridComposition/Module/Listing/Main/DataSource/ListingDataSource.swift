@@ -31,7 +31,7 @@ extension ListingDataSource: UICollectionViewDelegateFlowLayout {
         guard let item = provider.item(at: indexPath) else { return CGSize.zero }
         let width = collectionView.frame.width - (item.sectionInset.left + item.sectionInset.right)
         let actual = (width / 2 - (item.interItemSpacing * 2))
-        return .init(width: actual , height: item.itemHeight)
+        return .init(width: actual, height: item.itemHeight)
     }
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -48,7 +48,7 @@ extension ListingDataSource: ItemHeaderViewDelegate {
         let manager = WishlistManager()
         if let indexPath = index, let viewModel = provider.item(at: indexPath) {
             if viewModel.isItemInWishlist {
-                manager.deleteWishlistItem(id: viewModel.id)
+                _ = manager.deleteWishlistItem(id: viewModel.id)
             } else {
                 manager.appendWishlist(item: viewModel.item)
             }

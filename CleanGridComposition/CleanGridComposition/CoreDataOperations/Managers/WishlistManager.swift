@@ -29,4 +29,11 @@ struct WishlistManager {
     func deleteWishlistItem(id: String) -> Bool {
         return wishlistDataRepository.delete(id: id)
     }
+    func clearAll() {
+        let items = fetchWishlist()
+        items?.forEach {
+            _ = deleteWishlistItem(id: $0.id)
+        }
+    }
+
 }

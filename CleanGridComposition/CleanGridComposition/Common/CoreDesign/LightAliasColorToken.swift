@@ -9,15 +9,13 @@ import UIKit
 struct LightAliasColorToken: Color {
     var primary = UIColor(hex:GlobalColorToken.pebble900)
     var surface = UIColor(hex:GlobalColorToken.snow100)
-    var accent = UIColor(hex:GlobalColorToken.green500)
-    var surface500: UIColor = UIColor(hex: GlobalColorToken.surface500)
+    var surface500: UIColor = UIColor.black.withAlphaComponent(0.02)
     
 }
 struct DarkAliasColorToken: Color {
     var primary = UIColor(hex:GlobalColorToken.pebble900)
     var surface = UIColor(hex:GlobalColorToken.snow100)
-    var accent = UIColor(hex:GlobalColorToken.green500)
-    var surface500: UIColor = UIColor(hex: GlobalColorToken.surface500)
+    var surface500: UIColor = UIColor.black.withAlphaComponent(0.02)
 }
 extension UIColor {
     convenience init(hex hexString: String) {

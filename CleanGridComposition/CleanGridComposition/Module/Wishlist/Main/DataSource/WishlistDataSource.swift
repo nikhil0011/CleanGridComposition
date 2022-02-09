@@ -6,7 +6,11 @@
 //
 
 import UIKit
+protocol WishlistDataSourceDelegate: AnyObject {
+    func reload()
+}
 class WishlistDataSource: CollectionArrayDataSource<WishlistItemViewModel, WishlistItemCollectionViewCell> {
+    var reloadData: (() -> Void)?
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
@@ -42,8 +46,7 @@ extension WishlistDataSource: WishlistItemViewDelegate {
     func removeItemTapped(id: String) {
         let repositoryManager = WishlistManager()
         if repositoryManager.deleteWishlistItem(id: id) {
-            Logger.log(type: .info, msg: "Item Deleted \(id)")
-//            collectionView.reloadData()
+            reloadData?()
         }
     }
 }

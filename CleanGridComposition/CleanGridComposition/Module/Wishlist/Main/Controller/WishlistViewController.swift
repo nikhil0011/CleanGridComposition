@@ -8,12 +8,13 @@
 import UIKit
 
 class WishlistViewController: UIViewController {
+    var interactor: WishlistUseCase?
     weak var coordinator: MainCoordinator?
     var dataSource: WishlistDataSource?
     private let manager: WishlistManager = WishlistManager()
     lazy var listingView: WishlistView = WishlistView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = LColor.surface500
+        $0.backgroundColor = LColor.surface
     }
     func setupView() {
         self.view.stack(listingView)
@@ -30,13 +31,15 @@ class WishlistViewController: UIViewController {
     }
     func setupDataSource(viewModel: WishlistViewModel) {
         dataSource = WishlistDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
+        dataSource?.reloadData = { [weak self] in
+            self?.interactor?.fetch()
+        }
         self.listingView.collectionView.reloadData()
     }
 }
 extension WishlistViewController: WishlistPresenterOutput {
     func showCatalogue(viewModel: WishlistViewModel) {
         ActivityIndicator.shared.hideProgressView()
-        Logger.log(msg: "Hidden")
         setupDataSource(viewModel: viewModel)
     }
     

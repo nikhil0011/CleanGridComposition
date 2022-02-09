@@ -31,6 +31,12 @@
 		2330215D27B055880046F7AB /* CleanGridCompositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330215C27B055880046F7AB /* CleanGridCompositionTests.swift */; };
 		2330216727B055880046F7AB /* CleanGridCompositionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330216627B055880046F7AB /* CleanGridCompositionUITests.swift */; };
 		2330216927B055880046F7AB /* CleanGridCompositionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330216827B055880046F7AB /* CleanGridCompositionUITestsLaunchTests.swift */; };
+		23C1C17727B42AF0000CD31B /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C17627B42AF0000CD31B /* NetworkTests.swift */; };
+		23C1C17A27B42B9B000CD31B /* ListingDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C17927B42B9A000CD31B /* ListingDataSourceTests.swift */; };
+		23C1C17D27B42C44000CD31B /* ListingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C17C27B42C44000CD31B /* ListingViewControllerTests.swift */; };
+		23C1C18227B42CC0000CD31B /* CartManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C18127B42CC0000CD31B /* CartManagerTests.swift */; };
+		23C1C18427B42CCB000CD31B /* WishlistManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C18327B42CCB000CD31B /* WishlistManagerTests.swift */; };
+		23C1C18627B4392A000CD31B /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C18527B4392A000CD31B /* CardLayout.swift */; };
 		23D1C4B327B2C762003ADDFD /* CDWishlist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1C4B127B2C762003ADDFD /* CDWishlist+CoreDataClass.swift */; };
 		23D1C4B427B2C762003ADDFD /* CDWishlist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1C4B227B2C762003ADDFD /* CDWishlist+CoreDataProperties.swift */; };
 		23D1C4B627B2E5C4003ADDFD /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1C4B527B2E5C4003ADDFD /* BaseNavigationViewController.swift */; };
@@ -92,7 +98,6 @@
 		23DFD3C127B06F83009307F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3C027B06F83009307F0 /* DetailViewController.swift */; };
 		23DFD3C427B071B3009307F0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3C327B071B3009307F0 /* DetailView.swift */; };
 		23DFD3DB27B153C6009307F0 /* ListingItemInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3DA27B153C6009307F0 /* ListingItemInteractionView.swift */; };
-		23DFD3DD27B155BD009307F0 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFD3DC27B155BD009307F0 /* CardLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +146,12 @@
 		2330216227B055880046F7AB /* CleanGridCompositionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanGridCompositionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2330216627B055880046F7AB /* CleanGridCompositionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanGridCompositionUITests.swift; sourceTree = "<group>"; };
 		2330216827B055880046F7AB /* CleanGridCompositionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanGridCompositionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		23C1C17627B42AF0000CD31B /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		23C1C17927B42B9A000CD31B /* ListingDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDataSourceTests.swift; sourceTree = "<group>"; };
+		23C1C17C27B42C44000CD31B /* ListingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewControllerTests.swift; sourceTree = "<group>"; };
+		23C1C18127B42CC0000CD31B /* CartManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManagerTests.swift; sourceTree = "<group>"; };
+		23C1C18327B42CCB000CD31B /* WishlistManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistManagerTests.swift; sourceTree = "<group>"; };
+		23C1C18527B4392A000CD31B /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		23D1C4B127B2C762003ADDFD /* CDWishlist+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDWishlist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		23D1C4B227B2C762003ADDFD /* CDWishlist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDWishlist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		23D1C4B527B2E5C4003ADDFD /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +212,6 @@
 		23DFD3C027B06F83009307F0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		23DFD3C327B071B3009307F0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		23DFD3DA27B153C6009307F0 /* ListingItemInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingItemInteractionView.swift; sourceTree = "<group>"; };
-		23DFD3DC27B155BD009307F0 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +424,47 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		23C1C17527B42ADC000CD31B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				23C1C17627B42AF0000CD31B /* NetworkTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		23C1C17827B42B8A000CD31B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23C1C17927B42B9A000CD31B /* ListingDataSourceTests.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		23C1C17B27B42C37000CD31B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				23C1C17C27B42C44000CD31B /* ListingViewControllerTests.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		23C1C17E27B42CA3000CD31B /* CoreDataOperations */ = {
+			isa = PBXGroup;
+			children = (
+				23C1C17F27B42CAE000CD31B /* Manager */,
+			);
+			path = CoreDataOperations;
+			sourceTree = "<group>";
+		};
+		23C1C17F27B42CAE000CD31B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				23C1C18127B42CC0000CD31B /* CartManagerTests.swift */,
+				23C1C18327B42CCB000CD31B /* WishlistManagerTests.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		23DFD33327B0562A009307F0 /* ImageCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +629,8 @@
 		23DFD39527B05CB3009307F0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				23C1C17E27B42CA3000CD31B /* CoreDataOperations */,
+				23C1C17527B42ADC000CD31B /* Network */,
 				23DFD39627B05CC2009307F0 /* Listing */,
 			);
 			path = Module;
@@ -586,6 +639,8 @@
 		23DFD39627B05CC2009307F0 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				23C1C17B27B42C37000CD31B /* ViewController */,
+				23C1C17827B42B8A000CD31B /* DataSource */,
 				23DFD3B827B06C5E009307F0 /* ViewModel */,
 				23DFD39727B05CC9009307F0 /* Presenter */,
 			);
@@ -622,10 +677,10 @@
 		23DFD3A027B0607B009307F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				23C1C18527B4392A000CD31B /* CardLayout.swift */,
 				23DFD3A527B060C3009307F0 /* ListingView.swift */,
 				23DFD3AE27B061E9009307F0 /* ListingtemCellView.swift */,
 				23DFD3DA27B153C6009307F0 /* ListingItemInteractionView.swift */,
-				23DFD3DC27B155BD009307F0 /* CardLayout.swift */,
 				23D1C4B727B2E85A003ADDFD /* ItemImageView.swift */,
 				23D1C4B927B2E86C003ADDFD /* ItemHeaderView.swift */,
 				23D1C4BB27B2E888003ADDFD /* BadgeView.swift */,
@@ -876,9 +931,9 @@
 				2303452D27B16EF500D9FFB3 /* WishlistView.swift in Sources */,
 				2323CC1C27B1A6DD00CA9758 /* CartItemManager.swift in Sources */,
 				23DFD39427B05C8C009307F0 /* CatalogueData.swift in Sources */,
+				23C1C18627B4392A000CD31B /* CardLayout.swift in Sources */,
 				23DFD37927B0581F009307F0 /* Typography.swift in Sources */,
 				23DFD37227B0581F009307F0 /* UIView+Extensions.swift in Sources */,
-				23DFD3DD27B155BD009307F0 /* CardLayout.swift in Sources */,
 				23DFD34827B0562A009307F0 /* Urls.swift in Sources */,
 				23DFD3C127B06F83009307F0 /* DetailViewController.swift in Sources */,
 				23D1C4BA27B2E86C003ADDFD /* ItemHeaderView.swift in Sources */,
@@ -931,8 +986,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				23DFD39A27B05CF0009307F0 /* ListingUseCaseTests.swift in Sources */,
+				23C1C18227B42CC0000CD31B /* CartManagerTests.swift in Sources */,
+				23C1C18427B42CCB000CD31B /* WishlistManagerTests.swift in Sources */,
 				2330215D27B055880046F7AB /* CleanGridCompositionTests.swift in Sources */,
+				23C1C17D27B42C44000CD31B /* ListingViewControllerTests.swift in Sources */,
+				23C1C17727B42AF0000CD31B /* NetworkTests.swift in Sources */,
 				23DFD3BA27B06C6C009307F0 /* ListingViewModelTest.swift in Sources */,
+				23C1C17A27B42B9B000CD31B /* ListingDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,9 +1209,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W28Q572LJ2;
+				DEVELOPMENT_TEAM = 829UUG4B6U;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bundle.CleanGridCompositionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1169,9 +1229,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W28Q572LJ2;
+				DEVELOPMENT_TEAM = 829UUG4B6U;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bundle.CleanGridCompositionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1188,7 +1248,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W28Q572LJ2;
+				DEVELOPMENT_TEAM = 829UUG4B6U;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bundle.CleanGridCompositionUITests;
@@ -1206,7 +1266,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W28Q572LJ2;
+				DEVELOPMENT_TEAM = 829UUG4B6U;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bundle.CleanGridCompositionUITests;

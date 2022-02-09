@@ -34,3 +34,12 @@ extension UIImageView {
        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 }
+extension Optional where Wrapped == Data {
+    func image() -> UIImage? {
+        if let data = self {
+            return UIImage(data: data)
+        }
+        return UIImage(systemName: "picture")
+    }
+}
+

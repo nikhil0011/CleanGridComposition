@@ -7,14 +7,14 @@
 
 import UIKit
 
-class BadgeView: BaseView {
+class BadgeView: CardView {
     lazy var label: UILabel = UILabel.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = 1
     }
     override func setupViews() {
-        addCorner(radius: 2)
-        stack(label).padLeft(2).padRight(2)
+        self.cornnerRadius = 2
+        stack(label).padLeft(4).padRight(4)
     }
     func setup(text: String) {
         ListingStyler.myModule.apply(textStyle: .badgeTitle(text), to: label)

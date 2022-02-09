@@ -9,25 +9,30 @@ import UIKit
 
 class DetailViewController: UIViewController {
     weak var coordinator: MainCoordinator?
-    let networker = ImageLoader.shared
-    let styler: ListingStyler = ListingStyler.myModule
     var viewModel: ListingItemViewModel?
     lazy var detailView: DetailView = DetailView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = LColor.surface
         $0.delegate = self
     }
     let manager: CartItemManager = CartItemManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        setupNavigationBar()
+    }
+    func setupNavigationBar() {
         customiseBackItem(image: UIImage.App.back, action: #selector(popToPrevious))
         enableInteractiveGesture()
         if let viewModel = viewModel {
             self.title = viewModel.title
             setupRightBarItem(image: viewModel.wishlistIcon)
         }
+    }
+    func setupView() {
         self.view.addSubview(detailView)
         detailView.fillSuperview()
-        setup(viewModel: viewModel)
+        detailView.setup(viewModel: viewModel)
     }
     @objc func popToPrevious() {
         coordinator?.dismiss()
@@ -44,27 +49,6 @@ class DetailViewController: UIViewController {
     }
     func setupRightBarItem(image: String) {
         addRightBarItem(image: image, action: #selector(manageWishlist))
-    }
-    func setup(viewModel: ListingItemViewModel?) {
-        guard let model = viewModel else {
-            return
-        }
-        detailView.isItemInCart = model.isItemInCart
-        styler.apply(textStyle: .detailTitle(model.title), to: detailView.titleLabel)
-        styler.apply(textStyle: .detaillSubTitle(model.subTitle), to: detailView.subTitleLabel)
-        styler.apply(textStyle: .detaillSubTitle(model.price), to: detailView.priceLabel)
-        setupImage()
-    }
-    func setupImage() {
-        detailView.itemImageView.image = UIImage(named: UIImage.App.placeholderImage)
-        if let url = viewModel?.imageUrl {
-            detailView.itemImageView.image(url: url) { [weak self] data, error  in
-                let img = data.image()
-                DispatchQueue.main.async {
-                    self?.detailView.itemImageView.image = img
-                }
-            }
-        }
     }
 }
 extension DetailViewController: DetailPresenterOutput {

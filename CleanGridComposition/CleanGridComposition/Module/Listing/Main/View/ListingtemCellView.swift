@@ -8,7 +8,6 @@ import UIKit
 
 class ListingItemCellView: BaseView {
     let styler = ListingStyler.myModule
-    
     lazy var titleLabel: UILabel = UILabel.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = 1
@@ -25,14 +24,12 @@ class ListingItemCellView: BaseView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = LColor.surface
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
     override func setupViews() {
-        let infoStack = stack(titleLabel, subTitleLabel, priceLabel, alignment: .top, distribution: .fillProportionally
-        ).withMargins(.init(top: 0, left: 2, bottom: 4, right: 2))
-        let interactionStackView = stack(interactionView).withHeight(240)
-        stack(interactionStackView, infoStack, spacing: 3)
+        addSub(views: interactionView, titleLabel, subTitleLabel, priceLabel)
+        interactionView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 240)
+        titleLabel.anchor(top: interactionView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 4, paddingRight: 4)
+        subTitleLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 2, paddingLeft: 4, paddingRight: 4)
+        priceLabel.anchor(top: subTitleLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 4, paddingRight: 4)
     }
     func setupInfo(viewModel: ListingItemViewModel) {
         styler.apply(textStyle: .listingCellTitle(viewModel.title), to: titleLabel)

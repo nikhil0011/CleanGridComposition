@@ -9,6 +9,7 @@
 import UIKit
 
 class ListingViewController: UIViewController {
+    var interactor: ListingUseCase?
     enum SectionType {
         case catalogue
     }
@@ -19,24 +20,31 @@ class ListingViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = LColor.surface500
     }
-    func setupView() {
-        self.view.stack(listingView)
+    var isIntialLoad = true
+    var viewTitle: String = "Listing" {
+        didSet {
+            self.title = viewTitle
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New In"
+        ActivityIndicator.shared.showProgressView(self.view)
+        setupNavbar()
+        setupView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !isIntialLoad {
+            interactor?.fetch()
+        }
+        isIntialLoad = false
+    }
+    func setupView() {
+        self.view.stack(listingView)
+    }
+    func setupNavbar() {
         customiseBackItem(image: UIImage.App.dismiss, action: #selector(clearCart))
         addRightBarItem(image: UIImage.App.wishlist, action: #selector(navigateToWishlist))
-        setupView()
-        ActivityIndicator.shared.showProgressView(self.view)
-    }
-    
-    @objc func navigateToWishlist() {
-        coordinator?.showWishlist()
-    }
-    @objc func clearCart() {
-        CartItemManager().clearAll()
-        SharedAlert.sharedInstance.alert(view: self, title: "Alert", message: "Cart Cleared")
     }
     private func setupDataSource(viewModel: ListingViewModel) {
         dataSource = ListingDataSource(collectionView: listingView.collectionView, array: viewModel.listOfItemVM())
@@ -52,6 +60,13 @@ class ListingViewController: UIViewController {
             manager.appendWishlist(item: viewModel.item)
         }
     }
+    @objc func navigateToWishlist() {
+        coordinator?.showWishlist()
+    }
+    @objc func clearCart() {
+        CartItemManager().clearAll()
+        SharedAlert.sharedInstance.alert(view: self, title: "Alert", message: "Cart Cleared")
+    }
 }
 extension ListingViewController: ListingPresenterOutput {
     func showError(error: GenericResponse) {
@@ -62,7 +77,7 @@ extension ListingViewController: ListingPresenterOutput {
     }
     func showCatalogue(viewModel: ListingViewModel) {
         ActivityIndicator.shared.hideProgressView()
-        Logger.log(msg: "Hidden")
         setupDataSource(viewModel: viewModel)
+        self.viewTitle = viewModel.data.title
     }
 }

@@ -16,7 +16,9 @@ class ListingItemInteractionView: CardView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = LColor.surface
     }
-   
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
     override func setupViews() {
         let buttons = stack(wishlistView).withHeight(60)
         let image = stack(imageView).withHeight(180)

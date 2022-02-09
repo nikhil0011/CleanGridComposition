@@ -38,17 +38,19 @@ class WishlistItemView: BaseView {
         $0.isUserInteractionEnabled = true
         $0.setImage(UIImage(named: UIImage.App.delete), for: .normal)
         $0.contentMode = .scaleAspectFit
+        $0.contentVerticalAlignment = .bottom
         $0.addTarget(self, action: #selector(removeFromWishlist(sender:)), for: .touchUpInside)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
     }
     override func setupViews() {
-        let infoStack = stack(titleLabel.withHeight(20), subTitleLabel.withHeight(40), priceLabel)
-        let image = stack(itemImageView.withSize(.init(width: 140, height: 140)))
-        let contentView = hstack(image, infoStack, alignment: .top)
-        let actionView = stack(removeButton.withSize(.init(width: 120, height: 40)), alignment: .trailing)
-        stack(contentView, actionView, spacing: 4)
+        addSub(views: itemImageView, titleLabel, subTitleLabel, priceLabel, removeButton)
+        itemImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 8, width: 140, height: 140)
+        titleLabel.anchor(top: topAnchor, left: itemImageView.rightAnchor, right: rightAnchor, paddingTop: 20)
+        subTitleLabel.anchor(top: titleLabel.bottomAnchor, left: itemImageView.rightAnchor, right: rightAnchor, paddingTop: 2)
+        priceLabel.anchor(top: subTitleLabel.bottomAnchor, left: itemImageView.rightAnchor, right: rightAnchor, paddingTop: 16)
+        removeButton.anchor(bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 10, width: 120, height: 60)
     }
     @objc func removeFromWishlist(sender: AnyObject) {
         if let itemId = id {
@@ -67,9 +69,8 @@ class WishlistItemView: BaseView {
         itemImageView.image = UIImage(named: UIImage.App.placeholderImage)
         if let url = url {
             itemImageView.image(url: url) { [weak self] data, error  in
-                let img = data.image()
                 DispatchQueue.main.async {
-                    self?.itemImageView.image = img
+                    self?.itemImageView.image = data.image()
                 }
             }
         }

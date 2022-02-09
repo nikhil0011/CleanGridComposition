@@ -9,6 +9,7 @@ import UIKit
 struct ListingItemViewModel {
     let item: Item
     let id: String
+    let mrp: String
     var title: String
     var subTitle: String
     var price: String
@@ -27,20 +28,20 @@ struct ListingItemViewModel {
     init(item: Item, section: ListingViewController.SectionType) {
         self.id = item.id
         self.title = (item.brand ?? "").uppercased()
-        self.subTitle = (item.name ?? "").capitalized
-        self.price = "AED \(item.price)"
+        self.subTitle = (item.name ?? "").uppercased()
+        self.price = "\(item.price) AED"
         self.imageUrl = URL(string: item.image ?? "")
         self.badges = item.badges
         self.section = section
+        self.mrp = String(item.originalPrice ?? 0) + " AED"
         self.item = item
     }
     var itemHeight: CGFloat {
         330
     }
     var itemInset: UIEdgeInsets {
-        .init(top: 0, left: 4, bottom: 0, right: 4)
+        .init(top: 2, left: 2, bottom: 2, right: 2)
     }
-    
     var interItemSpacing: CGFloat {
         4
     }

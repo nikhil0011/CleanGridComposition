@@ -28,6 +28,7 @@ class MainCoordinator: Coordinator {
         vc.coordinator = self
         let presenter = ListingPresenter(output: WeakRef(vc))
         let usecase = ListingUseCase(output: presenter)
+        vc.interactor = usecase
         usecase.fetch()
         navigationController.pushViewController(vc, animated: true)
     }
@@ -43,6 +44,7 @@ class MainCoordinator: Coordinator {
         vc.coordinator = self
         let presenter = WishlistPresenter(output: WeakRef(vc))
         let usecase = WishlistUseCase(output: presenter)
+        vc.interactor = usecase
         usecase.fetch()
         let nvc = BaseNavigationViewController(rootViewController: vc)
         nvc.modalPresentationStyle = .fullScreen

@@ -25,23 +25,10 @@ class ListingItemCollectionViewCell: BaseCollectionViewCell, ConfigurableCell {
         backgroundColor = LColor.surface.alpha(with: .opacity24)
         stack(cellView)
     }
-    
     func configure(_ item: ListingItemViewModel, at indexPath: IndexPath) {
-        let id = item.id
-        if self.respresntedIndentifier == id {
+        if self.respresntedIndentifier == item.id {
             self.cellView.setupInfo(viewModel: item)
         }
-    }
-    
-
-}
-
-extension Optional where Wrapped == Data {
-    func image() -> UIImage? {
-        if let data = self {
-            return UIImage(data: data)
-        }
-        return UIImage(systemName: "picture")
     }
 }
 

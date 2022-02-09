@@ -31,7 +31,6 @@ final class PersistentStorage
 
     lazy var context = persistentContainer.viewContext
     // MARK: - Core Data Saving support
-
     func saveContext() {
         if context.hasChanges {
             do {
