@@ -18,6 +18,7 @@ import UIKit
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        clipsToBounds = true
         layer.cornerRadius = cornnerRadius
         layer.shadowColor = shadowColour.cgColor
         layer.shadowOffset = CGSize(width: shadowOfSetWidth, height: shadowOfSetHeight)
