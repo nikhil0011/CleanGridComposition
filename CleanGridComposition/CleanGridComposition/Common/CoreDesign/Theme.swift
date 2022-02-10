@@ -26,9 +26,9 @@ public class Theme {
         }
     }
 
-    public func setStyle(app : App = .recipe, font aFont: Font?) {
+    public func setStyle(app : App = .catalogue, font aFont: Font?) {
         switch app {
-        case .recipe:
+        case .catalogue:
             self.light = LightAliasColorToken()
             self.dark = DarkAliasColorToken()
         }
