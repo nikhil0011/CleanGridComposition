@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         overrideApplicationThemeStyle()
 
-        Theme.shared.setStyle(app: .recipe, font: nil)
+        Theme.shared.setStyle(app: .catalogue, font: nil)
         return true
     }
 }
