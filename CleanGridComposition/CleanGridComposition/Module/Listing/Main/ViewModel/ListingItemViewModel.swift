@@ -9,12 +9,18 @@ import UIKit
 struct ListingItemViewModel {
     let item: Item
     let id: String
-    let mrp: String
+    private let mrp: Int?
     var title: String
     var subTitle: String
     var price: String
     var badges: [String]?
     var imageUrl: URL?
+    var mrpString: String {
+        guard let orgPrice = mrp else {
+            return ""
+        }
+        return String(orgPrice) + " AED"
+    }
     let section: ListingViewController.SectionType
     var isItemInWishlist: Bool {
         WishlistManager().fetchWishlistItem(byIdentifier: id) != nil
@@ -33,7 +39,7 @@ struct ListingItemViewModel {
         self.imageUrl = URL(string: item.image ?? "")
         self.badges = item.badges
         self.section = section
-        self.mrp = String(item.originalPrice ?? 0) + " AED"
+        self.mrp = item.originalPrice
         self.item = item
     }
     var itemHeight: CGFloat {

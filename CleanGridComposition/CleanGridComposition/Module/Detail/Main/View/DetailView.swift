@@ -68,7 +68,7 @@ class DetailView: BaseView {
         isItemInCart = model.isItemInCart
         styler.apply(textStyle: .detailTitle(model.title), to: titleLabel)
         styler.apply(textStyle: .detaillSubTitle(model.subTitle), to: subTitleLabel)
-        styler.apply(textStyle: .detailPrice(model.price, model.mrp), to: priceLabel)
+        styler.apply(textStyle: .detailPrice(model.price, model.mrpString), to: priceLabel)
         setupImage(url: viewModel?.imageUrl)
         updateCTA()
     }
