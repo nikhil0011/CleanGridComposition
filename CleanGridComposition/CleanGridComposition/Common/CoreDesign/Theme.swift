@@ -8,7 +8,7 @@
 import UIKit
 
 public enum App {
-    case recipe
+    case catalogue
 }
 
 public class Theme {
