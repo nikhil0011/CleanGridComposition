@@ -14,7 +14,7 @@ protocol APIConfiguration: URLRequestConvertible {
 }
 extension APIConfiguration {
     func returnBaseUrl() -> URL {
-        URL(string: host + path) ?? URL(string: "www.google.com")!
+        URL(string: host + path) ?? ERROR_PAGE_URL
     }
     func asURLRequest() throws -> URLRequest {
         var urlRequest = URLRequest(url: returnBaseUrl())
