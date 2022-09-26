@@ -37,7 +37,7 @@ open class ActivityIndicator {
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 10
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.style = .whiteLarge
+        activityIndicator.style = UIActivityIndicatorView.Style.large
         activityIndicator.center = CGPoint(x: progressView.bounds.width / 2, y: progressView.bounds.height / 2)
         activityIndicator.isHidden = true
         progressView.addSubview(activityIndicator)
@@ -62,7 +62,7 @@ open class ActivityIndicator {
         self.progressView.clipsToBounds = true
         self.progressView.layer.cornerRadius = 10
         self.activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        self.activityIndicator.style = .whiteLarge
+        self.activityIndicator.style = UIActivityIndicatorView.Style.large
         self.activityIndicator.center = CGPoint(x: self.progressView.bounds.width / 2, y: self.progressView.bounds.height / 2)
         self.progressView.addSubview(self.activityIndicator)
         self.containerView.addSubview(self.progressView)
